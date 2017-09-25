@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E5331151F796460006AFE1F /* MXButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5331141F796460006AFE1F /* MXButton.m */; };
 		5E5331181F79664D006AFE1F /* MXHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5331171F79664D006AFE1F /* MXHelper.m */; };
+		5E53311B1F7967B3006AFE1F /* MXdsdss.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E53311A1F7967B3006AFE1F /* MXdsdss.m */; };
 		5E9FF1881F79636E00283FBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1871F79636E00283FBD /* AppDelegate.m */; };
 		5E9FF18E1F79636E00283FBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18C1F79636E00283FBD /* Main.storyboard */; };
 		5E9FF1901F79636E00283FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18F1F79636E00283FBD /* Assets.xcassets */; };
@@ -23,6 +24,8 @@
 		5E5331141F796460006AFE1F /* MXButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXButton.m; sourceTree = "<group>"; };
 		5E5331161F79664D006AFE1F /* MXHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXHelper.h; sourceTree = "<group>"; };
 		5E5331171F79664D006AFE1F /* MXHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXHelper.m; sourceTree = "<group>"; };
+		5E5331191F7967B3006AFE1F /* MXdsdss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXdsdss.h; sourceTree = "<group>"; };
+		5E53311A1F7967B3006AFE1F /* MXdsdss.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXdsdss.m; sourceTree = "<group>"; };
 		5E9FF1831F79636E00283FBD /* MemoryForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9FF1861F79636E00283FBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E9FF1871F79636E00283FBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 			children = (
 				5E9FF1861F79636E00283FBD /* AppDelegate.h */,
 				5E9FF1871F79636E00283FBD /* AppDelegate.m */,
+				5E5331191F7967B3006AFE1F /* MXdsdss.h */,
+				5E53311A1F7967B3006AFE1F /* MXdsdss.m */,
 				5E5331131F796460006AFE1F /* MXButton.h */,
 				5E5331141F796460006AFE1F /* MXButton.m */,
 				5E5331161F79664D006AFE1F /* MXHelper.h */,
@@ -233,6 +238,7 @@
 			files = (
 				5E9FF1961F79636E00283FBD /* main.m in Sources */,
 				5E5331151F796460006AFE1F /* MXButton.m in Sources */,
+				5E53311B1F7967B3006AFE1F /* MXdsdss.m in Sources */,
 				5E5331181F79664D006AFE1F /* MXHelper.m in Sources */,
 				5E9FF1881F79636E00283FBD /* AppDelegate.m in Sources */,
 			);
