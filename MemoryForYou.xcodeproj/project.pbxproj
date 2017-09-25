@@ -13,9 +13,11 @@
 		5E9FF1901F79636E00283FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18F1F79636E00283FBD /* Assets.xcassets */; };
 		5E9FF1931F79636E00283FBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF1911F79636E00283FBD /* LaunchScreen.storyboard */; };
 		5E9FF1961F79636E00283FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1951F79636E00283FBD /* main.m */; };
+		B150D64DE5244FA58902E52D /* libPods-MemoryForYou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C87D5F742341887FED58B90E /* libPods-MemoryForYou.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		336CC48A0C4577F4BC0C0FEB /* Pods-MemoryForYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryForYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryForYou/Pods-MemoryForYou.release.xcconfig"; sourceTree = "<group>"; };
 		5E9FF1831F79636E00283FBD /* MemoryForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9FF1861F79636E00283FBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E9FF1871F79636E00283FBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		5E9FF1921F79636E00283FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E9FF1941F79636E00283FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E9FF1951F79636E00283FBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C87D5F742341887FED58B90E /* libPods-MemoryForYou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MemoryForYou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D588153A09E7C099B5B599C9 /* Pods-MemoryForYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryForYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryForYou/Pods-MemoryForYou.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B150D64DE5244FA58902E52D /* libPods-MemoryForYou.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				5E9FF1851F79636E00283FBD /* MemoryForYou */,
 				5E9FF1841F79636E00283FBD /* Products */,
+				8CD57BA0AC8F1CD306CE4D41 /* Pods */,
+				6B57A7CA58A42707929086DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,23 @@
 			path = MemoryForYou;
 			sourceTree = "<group>";
 		};
+		6B57A7CA58A42707929086DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C87D5F742341887FED58B90E /* libPods-MemoryForYou.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CD57BA0AC8F1CD306CE4D41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D588153A09E7C099B5B599C9 /* Pods-MemoryForYou.debug.xcconfig */,
+				336CC48A0C4577F4BC0C0FEB /* Pods-MemoryForYou.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E9FF1991F79636E00283FBD /* Build configuration list for PBXNativeTarget "MemoryForYou" */;
 			buildPhases = (
+				F39FBDAB3020FAE33986991C /* [CP] Check Pods Manifest.lock */,
 				5E9FF17F1F79636E00283FBD /* Sources */,
 				5E9FF1801F79636E00283FBD /* Frameworks */,
 				5E9FF1811F79636E00283FBD /* Resources */,
+				AA8094ACA7A52F7658CE640A /* [CP] Embed Pods Frameworks */,
+				8063268C020CF70A254A1649 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8063268C020CF70A254A1649 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MemoryForYou/Pods-MemoryForYou-resources.sh",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MemoryForYou/Pods-MemoryForYou-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA8094ACA7A52F7658CE640A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MemoryForYou/Pods-MemoryForYou-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F39FBDAB3020FAE33986991C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MemoryForYou-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E9FF17F1F79636E00283FBD /* Sources */ = {
@@ -276,6 +359,7 @@
 		};
 		5E9FF19A1F79636E00283FBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D588153A09E7C099B5B599C9 /* Pods-MemoryForYou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,6 +374,7 @@
 		};
 		5E9FF19B1F79636E00283FBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 336CC48A0C4577F4BC0C0FEB /* Pods-MemoryForYou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
