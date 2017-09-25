@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5E5331151F796460006AFE1F /* MXButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5331141F796460006AFE1F /* MXButton.m */; };
+		5E5331181F79664D006AFE1F /* MXHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5331171F79664D006AFE1F /* MXHelper.m */; };
 		5E9FF1881F79636E00283FBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1871F79636E00283FBD /* AppDelegate.m */; };
-		5E9FF18B1F79636E00283FBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF18A1F79636E00283FBD /* ViewController.m */; };
 		5E9FF18E1F79636E00283FBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18C1F79636E00283FBD /* Main.storyboard */; };
 		5E9FF1901F79636E00283FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18F1F79636E00283FBD /* Assets.xcassets */; };
 		5E9FF1931F79636E00283FBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF1911F79636E00283FBD /* LaunchScreen.storyboard */; };
@@ -21,11 +21,11 @@
 		336CC48A0C4577F4BC0C0FEB /* Pods-MemoryForYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryForYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryForYou/Pods-MemoryForYou.release.xcconfig"; sourceTree = "<group>"; };
 		5E5331131F796460006AFE1F /* MXButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXButton.h; sourceTree = "<group>"; };
 		5E5331141F796460006AFE1F /* MXButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXButton.m; sourceTree = "<group>"; };
+		5E5331161F79664D006AFE1F /* MXHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXHelper.h; sourceTree = "<group>"; };
+		5E5331171F79664D006AFE1F /* MXHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXHelper.m; sourceTree = "<group>"; };
 		5E9FF1831F79636E00283FBD /* MemoryForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9FF1861F79636E00283FBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E9FF1871F79636E00283FBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5E9FF1891F79636E00283FBD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5E9FF18A1F79636E00283FBD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5E9FF18D1F79636E00283FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E9FF18F1F79636E00283FBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E9FF1921F79636E00283FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,8 +72,8 @@
 				5E9FF1871F79636E00283FBD /* AppDelegate.m */,
 				5E5331131F796460006AFE1F /* MXButton.h */,
 				5E5331141F796460006AFE1F /* MXButton.m */,
-				5E9FF1891F79636E00283FBD /* ViewController.h */,
-				5E9FF18A1F79636E00283FBD /* ViewController.m */,
+				5E5331161F79664D006AFE1F /* MXHelper.h */,
+				5E5331171F79664D006AFE1F /* MXHelper.m */,
 				5E9FF18C1F79636E00283FBD /* Main.storyboard */,
 				5E9FF18F1F79636E00283FBD /* Assets.xcassets */,
 				5E9FF1911F79636E00283FBD /* LaunchScreen.storyboard */,
@@ -231,9 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E9FF18B1F79636E00283FBD /* ViewController.m in Sources */,
 				5E9FF1961F79636E00283FBD /* main.m in Sources */,
 				5E5331151F796460006AFE1F /* MXButton.m in Sources */,
+				5E5331181F79664D006AFE1F /* MXHelper.m in Sources */,
 				5E9FF1881F79636E00283FBD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
