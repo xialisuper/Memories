@@ -6,13 +6,13 @@
 //  Copyright © 2017年 夏立群. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "MXAppDelegate.h"
 
-@interface AppDelegate ()
+@interface MXAppDelegate ()
  
 @end
 
-@implementation AppDelegate
+@implementation MXAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

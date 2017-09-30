@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E5331151F796460006AFE1F /* MXButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5331141F796460006AFE1F /* MXButton.m */; };
-		5E5331181F79664D006AFE1F /* MXHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5331171F79664D006AFE1F /* MXHelper.m */; };
-		5E53311B1F7967B3006AFE1F /* MXdsdss.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E53311A1F7967B3006AFE1F /* MXdsdss.m */; };
-		5E9FF1881F79636E00283FBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1871F79636E00283FBD /* AppDelegate.m */; };
+		5E9FF1881F79636E00283FBD /* MXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1871F79636E00283FBD /* MXAppDelegate.m */; };
 		5E9FF18E1F79636E00283FBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18C1F79636E00283FBD /* Main.storyboard */; };
 		5E9FF1901F79636E00283FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18F1F79636E00283FBD /* Assets.xcassets */; };
 		5E9FF1931F79636E00283FBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF1911F79636E00283FBD /* LaunchScreen.storyboard */; };
 		5E9FF1961F79636E00283FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1951F79636E00283FBD /* main.m */; };
+		5EBAF2FD1F7F6D5300C627CA /* MXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAF2FC1F7F6D5300C627CA /* MXBaseViewController.m */; };
+		5EBAF3001F7F6D8A00C627CA /* MXAudioPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAF2FF1F7F6D8A00C627CA /* MXAudioPlayViewController.m */; };
+		5EBAF3061F7F72B100C627CA /* MXPhotoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAF3051F7F72B100C627CA /* MXPhotoUtil.m */; };
 		B150D64DE5244FA58902E52D /* libPods-MemoryForYou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C87D5F742341887FED58B90E /* libPods-MemoryForYou.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		336CC48A0C4577F4BC0C0FEB /* Pods-MemoryForYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryForYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryForYou/Pods-MemoryForYou.release.xcconfig"; sourceTree = "<group>"; };
-		5E5331131F796460006AFE1F /* MXButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXButton.h; sourceTree = "<group>"; };
-		5E5331141F796460006AFE1F /* MXButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXButton.m; sourceTree = "<group>"; };
-		5E5331161F79664D006AFE1F /* MXHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXHelper.h; sourceTree = "<group>"; };
-		5E5331171F79664D006AFE1F /* MXHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXHelper.m; sourceTree = "<group>"; };
-		5E5331191F7967B3006AFE1F /* MXdsdss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXdsdss.h; sourceTree = "<group>"; };
-		5E53311A1F7967B3006AFE1F /* MXdsdss.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXdsdss.m; sourceTree = "<group>"; };
 		5E9FF1831F79636E00283FBD /* MemoryForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E9FF1861F79636E00283FBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5E9FF1871F79636E00283FBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5E9FF1861F79636E00283FBD /* MXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXAppDelegate.h; sourceTree = "<group>"; };
+		5E9FF1871F79636E00283FBD /* MXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXAppDelegate.m; sourceTree = "<group>"; };
 		5E9FF18D1F79636E00283FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E9FF18F1F79636E00283FBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E9FF1921F79636E00283FBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E9FF1941F79636E00283FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E9FF1951F79636E00283FBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5EBAF2FB1F7F6D5300C627CA /* MXBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXBaseViewController.h; sourceTree = "<group>"; };
+		5EBAF2FC1F7F6D5300C627CA /* MXBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXBaseViewController.m; sourceTree = "<group>"; };
+		5EBAF2FE1F7F6D8A00C627CA /* MXAudioPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXAudioPlayViewController.h; sourceTree = "<group>"; };
+		5EBAF2FF1F7F6D8A00C627CA /* MXAudioPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXAudioPlayViewController.m; sourceTree = "<group>"; };
+		5EBAF3041F7F72B100C627CA /* MXPhotoUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXPhotoUtil.h; sourceTree = "<group>"; };
+		5EBAF3051F7F72B100C627CA /* MXPhotoUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXPhotoUtil.m; sourceTree = "<group>"; };
 		C87D5F742341887FED58B90E /* libPods-MemoryForYou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MemoryForYou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D588153A09E7C099B5B599C9 /* Pods-MemoryForYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryForYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryForYou/Pods-MemoryForYou.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,14 +71,11 @@
 		5E9FF1851F79636E00283FBD /* MemoryForYou */ = {
 			isa = PBXGroup;
 			children = (
-				5E9FF1861F79636E00283FBD /* AppDelegate.h */,
-				5E9FF1871F79636E00283FBD /* AppDelegate.m */,
-				5E5331191F7967B3006AFE1F /* MXdsdss.h */,
-				5E53311A1F7967B3006AFE1F /* MXdsdss.m */,
-				5E5331131F796460006AFE1F /* MXButton.h */,
-				5E5331141F796460006AFE1F /* MXButton.m */,
-				5E5331161F79664D006AFE1F /* MXHelper.h */,
-				5E5331171F79664D006AFE1F /* MXHelper.m */,
+				5E9FF1861F79636E00283FBD /* MXAppDelegate.h */,
+				5E9FF1871F79636E00283FBD /* MXAppDelegate.m */,
+				5EBAF3031F7F728700C627CA /* New Group */,
+				5EBAF3021F7F727500C627CA /* Base */,
+				5EBAF3011F7F726300C627CA /* Util */,
 				5E9FF18C1F79636E00283FBD /* Main.storyboard */,
 				5E9FF18F1F79636E00283FBD /* Assets.xcassets */,
 				5E9FF1911F79636E00283FBD /* LaunchScreen.storyboard */,
@@ -86,6 +83,33 @@
 				5E9FF1951F79636E00283FBD /* main.m */,
 			);
 			path = MemoryForYou;
+			sourceTree = "<group>";
+		};
+		5EBAF3011F7F726300C627CA /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5EBAF3041F7F72B100C627CA /* MXPhotoUtil.h */,
+				5EBAF3051F7F72B100C627CA /* MXPhotoUtil.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		5EBAF3021F7F727500C627CA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5EBAF2FB1F7F6D5300C627CA /* MXBaseViewController.h */,
+				5EBAF2FC1F7F6D5300C627CA /* MXBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5EBAF3031F7F728700C627CA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				5EBAF2FE1F7F6D8A00C627CA /* MXAudioPlayViewController.h */,
+				5EBAF2FF1F7F6D8A00C627CA /* MXAudioPlayViewController.m */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		6B57A7CA58A42707929086DF /* Frameworks */ = {
@@ -237,10 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9FF1961F79636E00283FBD /* main.m in Sources */,
-				5E5331151F796460006AFE1F /* MXButton.m in Sources */,
-				5E53311B1F7967B3006AFE1F /* MXdsdss.m in Sources */,
-				5E5331181F79664D006AFE1F /* MXHelper.m in Sources */,
-				5E9FF1881F79636E00283FBD /* AppDelegate.m in Sources */,
+				5EBAF3061F7F72B100C627CA /* MXPhotoUtil.m in Sources */,
+				5E9FF1881F79636E00283FBD /* MXAppDelegate.m in Sources */,
+				5EBAF3001F7F6D8A00C627CA /* MXAudioPlayViewController.m in Sources */,
+				5EBAF2FD1F7F6D5300C627CA /* MXBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TW4V35KEW8;
 				INFOPLIST_FILE = MemoryForYou/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Memory.MemoryForYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,6 +418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TW4V35KEW8;
 				INFOPLIST_FILE = MemoryForYou/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Memory.MemoryForYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";

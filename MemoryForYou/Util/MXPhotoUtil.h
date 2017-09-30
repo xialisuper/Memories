@@ -1,13 +1,13 @@
 //
-//  MXHelper.h
+//  MXPhotoUtil.h
 //  MemoryForYou
 //
-//  Created by 夏立群 on 2017/9/26.
+//  Created by 夏立群 on 2017/9/30.
 //  Copyright © 2017年 xialisuper. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface MXHelper : NSObject
+@interface MXPhotoUtil : NSObject
 
 @end
