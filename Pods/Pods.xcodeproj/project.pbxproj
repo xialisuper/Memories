@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7902297479E491BD5CD1F6E15C6BA14B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		C5E5605FBF4CB11FBB987CC832DDAE76 /* Pods-MemoryForYou-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD7BAE06AC8D4AFE8F81EE1898E1139 /* Pods-MemoryForYou-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		121F8EDE24548A7B7A4EED1999BA38A8 /* WBHttpRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WBHttpRequest.h; path = SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WBHttpRequest.h; sourceTree = "<group>"; };
+		17C6C6CE2D876F59FBE61FA859A253A8 /* SinaWeiboConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SinaWeiboConnector.framework; path = SDK/ShareSDK/Support/PlatformConnector/SinaWeiboConnector.framework; sourceTree = "<group>"; };
+		2395BEE5F54C34EB163BBCE03856631F /* libWeiboSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libWeiboSDK.a; path = SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/libWeiboSDK.a; sourceTree = "<group>"; };
+		241384FD7D4B30B9B7DDEDD96C331C30 /* libWeChatSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = SDK/ShareSDK/Support/PlatformSDK/WeChatSDK/libWeChatSDK.a; sourceTree = "<group>"; };
+		26FD0D5FF53DEBCEE69CACF961B93BE5 /* WBHttpRequest+WeiboToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WBHttpRequest+WeiboToken.h"; path = "SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WBHttpRequest+WeiboToken.h"; sourceTree = "<group>"; };
+		34C7B10D39800D28206DD59A377695C6 /* Pods-MemoryForYou-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MemoryForYou-acknowledgements.plist"; sourceTree = "<group>"; };
+		48F2A35D37FFA002136911E5EA53CBAD /* WXApi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WXApi.h; path = SDK/ShareSDK/Support/PlatformSDK/WeChatSDK/WXApi.h; sourceTree = "<group>"; };
+		4E0AB16A93A9C3D8C52496B8DA155B2E /* WechatConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WechatConnector.framework; path = SDK/ShareSDK/Support/PlatformConnector/WechatConnector.framework; sourceTree = "<group>"; };
+		562524756F800792E7A2FE745EF2983D /* Pods-MemoryForYou-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MemoryForYou-acknowledgements.markdown"; sourceTree = "<group>"; };
+		61FD45E0A4A6690B4FE444EB50E86577 /* WeiboSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WeiboSDK.h; path = SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.h; sourceTree = "<group>"; };
+		65FD12A42210E09A883D775CFC9C6604 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenAPI.framework; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		67AF9EE7D61E9964E7407D297FD8CEB0 /* WXApiObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WXApiObject.h; path = SDK/ShareSDK/Support/PlatformSDK/WeChatSDK/WXApiObject.h; sourceTree = "<group>"; };
+		79BBEF9FA97774C87CED6B1AF29D2417 /* Pods-MemoryForYou-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MemoryForYou-resources.sh"; sourceTree = "<group>"; };
+		7BB0946A856EB03C89A502A6C6D92D36 /* QQConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QQConnector.framework; path = SDK/ShareSDK/Support/PlatformConnector/QQConnector.framework; sourceTree = "<group>"; };
+		80FF9545214D2576ABD6770C55498C68 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDKExtension.framework; path = SDK/ShareSDK/Support/Optional/ShareSDKExtension.framework; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		978CB566F41A7DD277EEE0FA0EA6EF9D /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		9B14436F7A37846E02D4860659DEE87B /* WeiboSDK.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = WeiboSDK.bundle; path = SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle; sourceTree = "<group>"; };
+		A64A6228345D9E9B3780ECBAC649A757 /* libPods-MemoryForYou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MemoryForYou.a"; path = "libPods-MemoryForYou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6ED4FCEC29C42AA5C8CFFFED98F0744 /* MOBFoundationEx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundationEx.framework; sourceTree = "<group>"; };
+		AEA866FD60A9381E9868667726AD7769 /* Pods-MemoryForYou-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MemoryForYou-frameworks.sh"; sourceTree = "<group>"; };
+		B2EEEF0ED464E7F277C0EB01790A82D9 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		B3AAAF551FD281D7670A55655C315137 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDK.framework; path = SDK/ShareSDK/ShareSDK.framework; sourceTree = "<group>"; };
+		BA295B6208E62624BE6BDA352D9AA9F6 /* WechatAuthSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WechatAuthSDK.h; path = SDK/ShareSDK/Support/PlatformSDK/WeChatSDK/WechatAuthSDK.h; sourceTree = "<group>"; };
+		C2EDFB1947CC953C7E09399D4C7807B8 /* WeiboSDK+Statistics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WeiboSDK+Statistics.h"; path = "SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK+Statistics.h"; sourceTree = "<group>"; };
+		CBA089ABE8C3056B27252A691B581930 /* ShareSDK.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = ShareSDK.bundle; path = SDK/ShareSDK/Support/Required/ShareSDK.bundle; sourceTree = "<group>"; };
+		D3A77C8E321AA895758BE3CE806622A1 /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDKConnector.framework; path = SDK/ShareSDK/Support/Required/ShareSDKConnector.framework; sourceTree = "<group>"; };
+		D8D00B48BC547AA6F4ABD75268F2F216 /* Pods-MemoryForYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MemoryForYou.debug.xcconfig"; sourceTree = "<group>"; };
+		DDD7BAE06AC8D4AFE8F81EE1898E1139 /* Pods-MemoryForYou-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MemoryForYou-dummy.m"; sourceTree = "<group>"; };
+		FE9792A97D2C75230EE8C3F963E633A8 /* Pods-MemoryForYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MemoryForYou.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		201F7A262CF02E58DD69A04332E70969 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7902297479E491BD5CD1F6E15C6BA14B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0710542023FFACDD72FB1A312290897F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A199D3DCCFDD06838ECED00C4AF4635A /* Pods-MemoryForYou */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		0991F5FE922E2D6D448E40719261BBE5 /* ShareSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A22C2B5CA687C506ACBB1DB21A3A334E /* Frameworks */,
+				1D74546EDFD04371792FFDFE5EBB2132 /* Resources */,
+			);
+			name = ShareSDK;
+			sourceTree = "<group>";
+		};
+		0EDC3237F56684CCF73977511EE35369 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				BA295B6208E62624BE6BDA352D9AA9F6 /* WechatAuthSDK.h */,
+				48F2A35D37FFA002136911E5EA53CBAD /* WXApi.h */,
+				67AF9EE7D61E9964E7407D297FD8CEB0 /* WXApiObject.h */,
+				FEE8D409E6AE2DB29860F3EC59F680EA /* Frameworks */,
+				566E1978A8F9C26F1AF03AC8A08B23D4 /* Resources */,
+			);
+			name = WeChat;
+			sourceTree = "<group>";
+		};
+		168D5A16752FD538B6FD957D1D0BD72F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3324A2D29BFA79590D5B5E2E1D2B732B /* MOBFoundation */,
+				A9A57B5A656A837D68971A086D691484 /* ShareSDK3 */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1786DCE1B0F288DFC390CBF910484074 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3AAAF551FD281D7670A55655C315137 /* ShareSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D380F8AEB8D59AF43908C1CA6223A9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2EEEF0ED464E7F277C0EB01790A82D9 /* MOBFoundation.framework */,
+				A6ED4FCEC29C42AA5C8CFFFED98F0744 /* MOBFoundationEx.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D74546EDFD04371792FFDFE5EBB2132 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CBA089ABE8C3056B27252A691B581930 /* ShareSDK.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3107115BC160E1FD6381A8621A51F4CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BB0946A856EB03C89A502A6C6D92D36 /* QQConnector.framework */,
+				80FF9545214D2576ABD6770C55498C68 /* ShareSDKExtension.framework */,
+				65FD12A42210E09A883D775CFC9C6604 /* TencentOpenAPI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3324A2D29BFA79590D5B5E2E1D2B732B /* MOBFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				1D380F8AEB8D59AF43908C1CA6223A9F /* Frameworks */,
+			);
+			name = MOBFoundation;
+			path = MOBFoundation;
+			sourceTree = "<group>";
+		};
+		4B8FEE182720D51D675499C8B09561D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2395BEE5F54C34EB163BBCE03856631F /* libWeiboSDK.a */,
+				17C6C6CE2D876F59FBE61FA859A253A8 /* SinaWeiboConnector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		566E1978A8F9C26F1AF03AC8A08B23D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5C9433B71BCF3F5AFE63810E77FB5376 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B14436F7A37846E02D4860659DEE87B /* WeiboSDK.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				168D5A16752FD538B6FD957D1D0BD72F /* Pods */,
+				ED01F1A62F79EFF101BDD19EA6527D77 /* Products */,
+				0710542023FFACDD72FB1A312290897F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		803F921613C03080A4A04BCB5B0542B1 /* ShareSDKPlatforms */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9CE854688CC92457658A7350D1726 /* QQ */,
+				F9653C1C3DED44F79C3D96E9ABD483B7 /* SinaWeibo */,
+				0EDC3237F56684CCF73977511EE35369 /* WeChat */,
+			);
+			name = ShareSDKPlatforms;
+			sourceTree = "<group>";
+		};
+		A0D9CE854688CC92457658A7350D1726 /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+				3107115BC160E1FD6381A8621A51F4CC /* Frameworks */,
+				B420E3CB6DF758F791837E092D5EDD03 /* Resources */,
+			);
+			name = QQ;
+			sourceTree = "<group>";
+		};
+		A199D3DCCFDD06838ECED00C4AF4635A /* Pods-MemoryForYou */ = {
+			isa = PBXGroup;
+			children = (
+				562524756F800792E7A2FE745EF2983D /* Pods-MemoryForYou-acknowledgements.markdown */,
+				34C7B10D39800D28206DD59A377695C6 /* Pods-MemoryForYou-acknowledgements.plist */,
+				DDD7BAE06AC8D4AFE8F81EE1898E1139 /* Pods-MemoryForYou-dummy.m */,
+				AEA866FD60A9381E9868667726AD7769 /* Pods-MemoryForYou-frameworks.sh */,
+				79BBEF9FA97774C87CED6B1AF29D2417 /* Pods-MemoryForYou-resources.sh */,
+				D8D00B48BC547AA6F4ABD75268F2F216 /* Pods-MemoryForYou.debug.xcconfig */,
+				FE9792A97D2C75230EE8C3F963E633A8 /* Pods-MemoryForYou.release.xcconfig */,
+			);
+			name = "Pods-MemoryForYou";
+			path = "Target Support Files/Pods-MemoryForYou";
+			sourceTree = "<group>";
+		};
+		A22C2B5CA687C506ACBB1DB21A3A334E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3A77C8E321AA895758BE3CE806622A1 /* ShareSDKConnector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9A57B5A656A837D68971A086D691484 /* ShareSDK3 */ = {
+			isa = PBXGroup;
+			children = (
+				1786DCE1B0F288DFC390CBF910484074 /* Frameworks */,
+				0991F5FE922E2D6D448E40719261BBE5 /* ShareSDK */,
+				803F921613C03080A4A04BCB5B0542B1 /* ShareSDKPlatforms */,
+			);
+			name = ShareSDK3;
+			path = ShareSDK3;
+			sourceTree = "<group>";
+		};
+		B420E3CB6DF758F791837E092D5EDD03 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				978CB566F41A7DD277EEE0FA0EA6EF9D /* TencentOpenApi_IOS_Bundle.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		ED01F1A62F79EFF101BDD19EA6527D77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A64A6228345D9E9B3780ECBAC649A757 /* libPods-MemoryForYou.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9653C1C3DED44F79C3D96E9ABD483B7 /* SinaWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				121F8EDE24548A7B7A4EED1999BA38A8 /* WBHttpRequest.h */,
+				26FD0D5FF53DEBCEE69CACF961B93BE5 /* WBHttpRequest+WeiboToken.h */,
+				61FD45E0A4A6690B4FE444EB50E86577 /* WeiboSDK.h */,
+				C2EDFB1947CC953C7E09399D4C7807B8 /* WeiboSDK+Statistics.h */,
+				4B8FEE182720D51D675499C8B09561D6 /* Frameworks */,
+				5C9433B71BCF3F5AFE63810E77FB5376 /* Resources */,
+			);
+			name = SinaWeibo;
+			sourceTree = "<group>";
+		};
+		FEE8D409E6AE2DB29860F3EC59F680EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				241384FD7D4B30B9B7DDEDD96C331C30 /* libWeChatSDK.a */,
+				4E0AB16A93A9C3D8C52496B8DA155B2E /* WechatConnector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BE5180F744A6AE425523600FC10D360 /* Pods-MemoryForYou */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E170D2DD110E2CD7CB02FF0FBA7AD7FF /* Build configuration list for PBXNativeTarget "Pods-MemoryForYou" */;
+			buildPhases = (
+				64787178EDAFF68AB655A086A6A8FC8A /* Sources */,
+				201F7A262CF02E58DD69A04332E70969 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MemoryForYou";
+			productName = "Pods-MemoryForYou";
+			productReference = A64A6228345D9E9B3780ECBAC649A757 /* libPods-MemoryForYou.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = ED01F1A62F79EFF101BDD19EA6527D77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BE5180F744A6AE425523600FC10D360 /* Pods-MemoryForYou */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64787178EDAFF68AB655A086A6A8FC8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E5605FBF4CB11FBB987CC832DDAE76 /* Pods-MemoryForYou-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		39E8DD539A9B84ED2289659C42735981 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7DE62ED7DF567519DF8FFD1BD28064E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8D00B48BC547AA6F4ABD75268F2F216 /* Pods-MemoryForYou.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BBC3C531040572F63918E3BBFC5CEF0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE9792A97D2C75230EE8C3F963E633A8 /* Pods-MemoryForYou.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FC768FBC48932813301C2F1E4AF2F6CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC768FBC48932813301C2F1E4AF2F6CB /* Debug */,
+				39E8DD539A9B84ED2289659C42735981 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E170D2DD110E2CD7CB02FF0FBA7AD7FF /* Build configuration list for PBXNativeTarget "Pods-MemoryForYou" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DE62ED7DF567519DF8FFD1BD28064E7 /* Debug */,
+				BBC3C531040572F63918E3BBFC5CEF0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

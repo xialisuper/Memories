@@ -7,6 +7,9 @@
 //
 
 #import "MXAppDelegate.h"
+#import "MXPhotoUtil.h"
+#import "MXAudioPlayViewController.h"
+#import "MXPhotoUtil.h"
 
 @interface MXAppDelegate ()
  
@@ -16,8 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
+//    // Override point for customization after application launch.
+//    
+//    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    MXAudioPlayViewController *vc = [[MXAudioPlayViewController alloc] init];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
@@ -36,7 +44,7 @@
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+//    [[MXPhotoUtil sharedInstance] updateAuthorization];
 }
 
 

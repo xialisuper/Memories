@@ -20,10 +20,23 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>打开相机用户扫描二维码</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>定位来查找附近的车辆 开始行程后使用后台定位来记录骑行路线</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>只用于开始行程后使用后台定位来记录骑行路线</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>定位来查找附近的车辆</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>到底允许不允许?</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -31,8 +44,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
