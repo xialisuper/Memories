@@ -8,8 +8,12 @@
 
 #import "MXAppDelegate.h"
 #import "MXPhotoUtil.h"
-#import "MXAudioPlayViewController.h"
 #import "MXPhotoUtil.h"
+
+
+#import "MXAudioPlayViewController.h"
+#import "MXImagePickerViewController.h"
+#import "MXBaseNavigationController.h"
 
 @interface MXAppDelegate ()
  
@@ -23,8 +27,11 @@
 //    
 //    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    MXAudioPlayViewController *vc = [[MXAudioPlayViewController alloc] init];
-    self.window.rootViewController = vc;
+    
+    
+    MXImagePickerViewController *vc = [[MXImagePickerViewController alloc] init];
+    MXBaseNavigationController *nav = [[MXBaseNavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
     return YES;

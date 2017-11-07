@@ -22,8 +22,12 @@
         if (status == PHAuthorizationStatusAuthorized) {
             NSLog(@"获得了相册权限");
             
-            [[MXPhotoUtil sharedInstance] fetchAllPhotosWithResults];
+            [[MXPhotoUtil sharedInstance] fetchAllPhotosWithResultsWithBlock:^(NSArray<PHAsset *> *assetsArray) {
+                NSLog(@"assetsArray.count %lu", (unsigned long)assetsArray.count);
+            }];
         }
+        
+        
         
     }];
     
@@ -33,6 +37,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
 }
 
 @end

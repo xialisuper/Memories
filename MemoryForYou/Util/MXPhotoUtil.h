@@ -8,14 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import <Photos/Photos.h>
+#import "MXImageModel.h"
 
 @interface MXPhotoUtil : NSObject
 
 @property(nonatomic, assign, readonly) PHAuthorizationStatus status;
 
 + (instancetype)sharedInstance;
-- (void)fetchAllPhotosWithResults;
 
+- (void)fetchAllPhotosWithResultsWithBlock:(void (^)(NSArray <MXImageModel *> *assetsArray))block;
+
+- (UIImage *)photoUtilFetchOriginImageWith:(PHAsset *)asset;
+
+
+/**
+ 从PHAsset获取缩略图Image
+
+ @param asset PHAsset
+ @param size 缩略图大小
+ @param handler 含有image的回调 多次
+ */
+- (void)photoUtilFetchThumbnailImageWith:(PHAsset *)asset WithSize:(CGSize)size block:(void (^)(UIImage *image, NSDictionary *info))handler;
 
 /**
  刷新当前相册授权状态

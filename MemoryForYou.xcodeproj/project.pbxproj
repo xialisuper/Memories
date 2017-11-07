@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		5E371E871FAABBBB009D8026 /* MXBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E371E861FAABBBA009D8026 /* MXBaseNavigationController.m */; };
 		5E371E8A1FAABBCE009D8026 /* MXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E371E891FAABBCE009D8026 /* MXTableViewController.m */; };
+		5E371E8E1FAAFF2A009D8026 /* MXImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E371E8D1FAAFF2A009D8026 /* MXImagePickerViewController.m */; };
+		5E371E941FAB001E009D8026 /* MXImagePickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E371E931FAB001E009D8026 /* MXImagePickerCollectionViewCell.m */; };
+		5E371E971FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E371E961FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m */; };
 		5E9FF1881F79636E00283FBD /* MXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1871F79636E00283FBD /* MXAppDelegate.m */; };
 		5E9FF1901F79636E00283FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18F1F79636E00283FBD /* Assets.xcassets */; };
 		5E9FF1961F79636E00283FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1951F79636E00283FBD /* main.m */; };
 		5EBAF2FD1F7F6D5300C627CA /* MXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAF2FC1F7F6D5300C627CA /* MXBaseViewController.m */; };
 		5EBAF3001F7F6D8A00C627CA /* MXAudioPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAF2FF1F7F6D8A00C627CA /* MXAudioPlayViewController.m */; };
 		5EBAF3061F7F72B100C627CA /* MXPhotoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAF3051F7F72B100C627CA /* MXPhotoUtil.m */; };
+		5EFB253D1FAFF128006A50AA /* MXImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB253C1FAFF128006A50AA /* MXImageModel.m */; };
 		B150D64DE5244FA58902E52D /* libPods-MemoryForYou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C87D5F742341887FED58B90E /* libPods-MemoryForYou.a */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +28,12 @@
 		5E371E861FAABBBA009D8026 /* MXBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXBaseNavigationController.m; sourceTree = "<group>"; };
 		5E371E881FAABBCE009D8026 /* MXTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXTableViewController.h; sourceTree = "<group>"; };
 		5E371E891FAABBCE009D8026 /* MXTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXTableViewController.m; sourceTree = "<group>"; };
+		5E371E8C1FAAFF2A009D8026 /* MXImagePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImagePickerViewController.h; sourceTree = "<group>"; };
+		5E371E8D1FAAFF2A009D8026 /* MXImagePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImagePickerViewController.m; sourceTree = "<group>"; };
+		5E371E921FAB001E009D8026 /* MXImagePickerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImagePickerCollectionViewCell.h; sourceTree = "<group>"; };
+		5E371E931FAB001E009D8026 /* MXImagePickerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImagePickerCollectionViewCell.m; sourceTree = "<group>"; };
+		5E371E951FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXPhotoPickerCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		5E371E961FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXPhotoPickerCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		5E9FF1831F79636E00283FBD /* MemoryForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9FF1861F79636E00283FBD /* MXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXAppDelegate.h; sourceTree = "<group>"; };
 		5E9FF1871F79636E00283FBD /* MXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXAppDelegate.m; sourceTree = "<group>"; };
@@ -38,6 +48,9 @@
 		5EBAF3051F7F72B100C627CA /* MXPhotoUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXPhotoUtil.m; sourceTree = "<group>"; };
 		5EC0236D1F9661B20094D65F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5EC0236E1F9661B20094D65F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5EFB253B1FAFF128006A50AA /* MXImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImageModel.h; sourceTree = "<group>"; };
+		5EFB253C1FAFF128006A50AA /* MXImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImageModel.m; sourceTree = "<group>"; };
+		5EFB25401FAFF469006A50AA /* MXPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXPrefixHeader.pch; sourceTree = "<group>"; };
 		C87D5F742341887FED58B90E /* libPods-MemoryForYou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MemoryForYou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D588153A09E7C099B5B599C9 /* Pods-MemoryForYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryForYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryForYou/Pods-MemoryForYou.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +67,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E371E8F1FAAFFD7009D8026 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E371E901FAAFFE4009D8026 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E371E921FAB001E009D8026 /* MXImagePickerCollectionViewCell.h */,
+				5E371E931FAB001E009D8026 /* MXImagePickerCollectionViewCell.m */,
+				5E371E951FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.h */,
+				5E371E961FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E371E911FAAFFEC009D8026 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EFB253B1FAFF128006A50AA /* MXImageModel.h */,
+				5EFB253C1FAFF128006A50AA /* MXImageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5E9FF17A1F79636E00283FBD = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +121,7 @@
 				5EBAF3021F7F727500C627CA /* Base */,
 				5EBAF3011F7F726300C627CA /* Util */,
 				5E9FF18F1F79636E00283FBD /* Assets.xcassets */,
-				5EC0236E1F9661B20094D65F /* LaunchScreen.storyboard */,
-				5EC0236D1F9661B20094D65F /* Main.storyboard */,
-				5E9FF1941F79636E00283FBD /* Info.plist */,
-				5E9FF1951F79636E00283FBD /* main.m */,
+				5EFB253F1FAFF429006A50AA /* Supporting Files */,
 			);
 			path = MemoryForYou;
 			sourceTree = "<group>";
@@ -114,10 +151,27 @@
 		5EBAF3031F7F728700C627CA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5E371E911FAAFFEC009D8026 /* Model */,
+				5E371E901FAAFFE4009D8026 /* View */,
+				5E371E8F1FAAFFD7009D8026 /* Controller */,
 				5EBAF2FE1F7F6D8A00C627CA /* MXAudioPlayViewController.h */,
 				5EBAF2FF1F7F6D8A00C627CA /* MXAudioPlayViewController.m */,
+				5E371E8C1FAAFF2A009D8026 /* MXImagePickerViewController.h */,
+				5E371E8D1FAAFF2A009D8026 /* MXImagePickerViewController.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		5EFB253F1FAFF429006A50AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EC0236E1F9661B20094D65F /* LaunchScreen.storyboard */,
+				5EC0236D1F9661B20094D65F /* Main.storyboard */,
+				5E9FF1941F79636E00283FBD /* Info.plist */,
+				5E9FF1951F79636E00283FBD /* main.m */,
+				5EFB25401FAFF469006A50AA /* MXPrefixHeader.pch */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		6B57A7CA58A42707929086DF /* Frameworks */ = {
@@ -266,11 +320,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EFB253D1FAFF128006A50AA /* MXImageModel.m in Sources */,
 				5E9FF1961F79636E00283FBD /* main.m in Sources */,
 				5E371E8A1FAABBCE009D8026 /* MXTableViewController.m in Sources */,
+				5E371E941FAB001E009D8026 /* MXImagePickerCollectionViewCell.m in Sources */,
 				5EBAF3061F7F72B100C627CA /* MXPhotoUtil.m in Sources */,
+				5E371E971FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m in Sources */,
 				5E9FF1881F79636E00283FBD /* MXAppDelegate.m in Sources */,
 				5EBAF3001F7F6D8A00C627CA /* MXAudioPlayViewController.m in Sources */,
+				5E371E8E1FAAFF2A009D8026 /* MXImagePickerViewController.m in Sources */,
 				5EBAF2FD1F7F6D5300C627CA /* MXBaseViewController.m in Sources */,
 				5E371E871FAABBBB009D8026 /* MXBaseNavigationController.m in Sources */,
 			);
@@ -390,7 +448,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNWXFM5T8S;
-				INFOPLIST_FILE = MemoryForYou/Info.plist;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MemoryForYou/Supporting Files/MXPrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/MemoryForYou/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Memory.MemoryForYou;
@@ -406,7 +465,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNWXFM5T8S;
-				INFOPLIST_FILE = MemoryForYou/Info.plist;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MemoryForYou/Supporting Files/MXPrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/MemoryForYou/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Memory.MemoryForYou;

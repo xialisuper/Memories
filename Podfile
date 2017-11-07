@@ -9,5 +9,8 @@ target 'MemoryForYou' do
     pod 'ShareSDK3/ShareSDKPlatforms/QQ'
     pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
     pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
+    
+    pod 'ReactiveCocoa', '~> 2.5'
+    pod 'Masonry'
 end
 
