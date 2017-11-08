@@ -168,6 +168,5 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     }
 }
 
-#pragma mark - UIGestureRecognizerDelegate
 
 @end
