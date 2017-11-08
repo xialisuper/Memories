@@ -98,7 +98,7 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"您点击了item:%ld", (long)indexPath.row);
+    NSLog(@"点击了item:%ld", (long)indexPath.row);
     [collectionView cellForItemAtIndexPath:indexPath].backgroundColor = [UIColor redColor];
 }
 
@@ -117,16 +117,6 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
 }
 
 #pragma mark - getter & setter
-//- (UILongPressGestureRecognizer *)longPressGesture {
-//    if (_longPressGesture == nil) {
-//        _longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-//        _longPressGesture.minimumPressDuration = 0.3;
-//        _longPressGesture.delegate = self;
-//        [self.photoCollectionView addGestureRecognizer:_longPressGesture];
-//
-//    }
-//    return _longPressGesture;
-//}
 
 #pragma mark - method
 
@@ -181,7 +171,5 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
             break;
     }
 }
-
-
 
 @end

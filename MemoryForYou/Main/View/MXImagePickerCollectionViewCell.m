@@ -34,7 +34,6 @@
     _imageModel = imageModel;
     
     PHAsset *asset = imageModel.photoAsset;
-    NSLog(@"%@", NSStringFromCGSize(self.contentView.bounds.size));
     
     @WeakObj(self);
     [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:asset WithSize:self.contentView.bounds.size block:^(UIImage *image, NSDictionary *info) {

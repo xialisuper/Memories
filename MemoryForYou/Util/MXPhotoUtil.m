@@ -97,7 +97,6 @@
                 // 获取一个资源（PHAsset）
                 PHAsset *asset = fetchResult[i];
                 if (asset.mediaType == PHAssetMediaTypeImage) {
-                    NSLog(@"%@", asset);
                     MXImageModel *model = [[MXImageModel alloc] initWithPhAsset:asset];
                     [assetsArray addObject:model];
                 }
@@ -108,7 +107,6 @@
         }
     }
     block(assetsArray);
-    
 }
 
 - (UIImage *)photoUtilFetchOriginImageWith:(PHAsset *)asset {
