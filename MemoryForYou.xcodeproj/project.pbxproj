@@ -450,7 +450,7 @@
 				DEVELOPMENT_TEAM = JNWXFM5T8S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MemoryForYou/Supporting Files/MXPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/MemoryForYou/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Memory.MemoryForYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -467,7 +467,7 @@
 				DEVELOPMENT_TEAM = JNWXFM5T8S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MemoryForYou/Supporting Files/MXPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/MemoryForYou/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Memory.MemoryForYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
