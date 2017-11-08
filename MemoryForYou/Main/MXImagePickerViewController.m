@@ -10,6 +10,7 @@
 #import "MXPhotoPickerCollectionViewFlowLayout.h"
 #import "MXImagePickerCollectionViewCell.h"
 #import "MXPhotoUtil.h"
+#import <Masonry.h>
 
 static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectionViewCell";
 @interface MXImagePickerViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate>
@@ -56,6 +57,19 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     self.photoCollectionView = photoCollectionView;
     
     [photoCollectionView registerClass:[MXImagePickerCollectionViewCell class] forCellWithReuseIdentifier:kImagePickerCollectionViewCell];
+    
+    [photoCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.bottom.equalTo(self.view);
+    }];
+}
+
+//横竖屏适配
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    if (size.width > size.height) {
+        NSLog(@"横屏");
+    } else {
+        NSLog(@"竖屏");
+    }
 }
 
 #pragma mark - DataSource
@@ -167,6 +181,7 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
             break;
     }
 }
+
 
 
 @end

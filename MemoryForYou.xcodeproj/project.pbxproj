@@ -12,6 +12,7 @@
 		5E371E8E1FAAFF2A009D8026 /* MXImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E371E8D1FAAFF2A009D8026 /* MXImagePickerViewController.m */; };
 		5E371E941FAB001E009D8026 /* MXImagePickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E371E931FAB001E009D8026 /* MXImagePickerCollectionViewCell.m */; };
 		5E371E971FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E371E961FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m */; };
+		5E6C42F41FB2B31A00C99D39 /* MXImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C42F31FB2B31A00C99D39 /* MXImagePreviewViewController.m */; };
 		5E9FF1881F79636E00283FBD /* MXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1871F79636E00283FBD /* MXAppDelegate.m */; };
 		5E9FF1901F79636E00283FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18F1F79636E00283FBD /* Assets.xcassets */; };
 		5E9FF1961F79636E00283FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1951F79636E00283FBD /* main.m */; };
@@ -34,6 +35,8 @@
 		5E371E931FAB001E009D8026 /* MXImagePickerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImagePickerCollectionViewCell.m; sourceTree = "<group>"; };
 		5E371E951FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXPhotoPickerCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		5E371E961FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXPhotoPickerCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		5E6C42F21FB2B31A00C99D39 /* MXImagePreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImagePreviewViewController.h; sourceTree = "<group>"; };
+		5E6C42F31FB2B31A00C99D39 /* MXImagePreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImagePreviewViewController.m; sourceTree = "<group>"; };
 		5E9FF1831F79636E00283FBD /* MemoryForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9FF1861F79636E00283FBD /* MXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXAppDelegate.h; sourceTree = "<group>"; };
 		5E9FF1871F79636E00283FBD /* MXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXAppDelegate.m; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				5EBAF2FF1F7F6D8A00C627CA /* MXAudioPlayViewController.m */,
 				5E371E8C1FAAFF2A009D8026 /* MXImagePickerViewController.h */,
 				5E371E8D1FAAFF2A009D8026 /* MXImagePickerViewController.m */,
+				5E6C42F21FB2B31A00C99D39 /* MXImagePreviewViewController.h */,
+				5E6C42F31FB2B31A00C99D39 /* MXImagePreviewViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				5EBAF3001F7F6D8A00C627CA /* MXAudioPlayViewController.m in Sources */,
 				5E371E8E1FAAFF2A009D8026 /* MXImagePickerViewController.m in Sources */,
 				5EBAF2FD1F7F6D5300C627CA /* MXBaseViewController.m in Sources */,
+				5E6C42F41FB2B31A00C99D39 /* MXImagePreviewViewController.m in Sources */,
 				5E371E871FAABBBB009D8026 /* MXBaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
