@@ -17,7 +17,7 @@
 @implementation MXImagePreviewAnimator
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
-    return MXNavigationTransitionTimeinterval;
+    return MXNavigationTransitionDuration;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{

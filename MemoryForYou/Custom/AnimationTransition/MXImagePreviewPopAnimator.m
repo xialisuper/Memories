@@ -10,7 +10,7 @@
 @implementation MXImagePreviewPopAnimator
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
-    return 0.6f;
+    return MXNavigationTransitionDuration;
 }
 
 - (void)animateTransition:(nonnull id<UIViewControllerContextTransitioning>)transitionContext { 

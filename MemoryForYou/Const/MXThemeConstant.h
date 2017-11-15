@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-#define MXNavigationTransitionTimeinterval 0.6f
+#define MXNavigationTransitionDuration 0.6f
