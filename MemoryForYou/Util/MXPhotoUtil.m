@@ -109,7 +109,7 @@
     block(assetsArray);
 }
 
-- (UIImage *)photoUtilFetchOriginImageWith:(PHAsset *)asset {
+- (void)photoUtilFetchOriginImageWith:(PHAsset *)asset block:(void (^)(UIImage *))block{
     __block UIImage *resultImage = nil;
 
     PHImageRequestOptions *phImageRequestOptions = [[PHImageRequestOptions alloc] init];
@@ -120,10 +120,9 @@
                                options:phImageRequestOptions
                          resultHandler:^(UIImage *result, NSDictionary *info) {
                              NSLog(@"photoUtilFetchOriginImageWith info: %@", info);
-                             resultImage = result;
+                             block(result);
 
                          }];
-    return resultImage;
 }
 
 - (void)photoUtilFetchThumbnailImageWith:(PHAsset *)asset WithSize:(CGSize)size block:(void (^)(UIImage *image, NSDictionary *info))handler {

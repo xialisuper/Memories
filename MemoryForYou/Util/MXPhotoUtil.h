@@ -18,7 +18,7 @@
 
 - (void)fetchAllPhotosWithResultsWithBlock:(void (^)(NSArray <MXImageModel *> *assetsArray))block;
 
-- (UIImage *)photoUtilFetchOriginImageWith:(PHAsset *)asset;
+- (void)photoUtilFetchOriginImageWith:(PHAsset *)asset block:(void (^)(UIImage *image))block;
 
 
 /**

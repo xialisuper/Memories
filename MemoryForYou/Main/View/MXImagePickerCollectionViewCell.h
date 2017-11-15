@@ -11,4 +11,6 @@
 
 @interface MXImagePickerCollectionViewCell : UICollectionViewCell
 @property(nonatomic, strong) MXImageModel *imageModel;
+//转场动画需要暴露属性.其他不要操纵.
+@property(nonatomic, strong) UIImageView *imageView;
 @end

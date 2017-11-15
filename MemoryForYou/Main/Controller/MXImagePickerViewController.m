@@ -9,17 +9,19 @@
 #import "MXImagePickerViewController.h"
 #import "MXPhotoPickerCollectionViewFlowLayout.h"
 #import "MXImagePickerCollectionViewCell.h"
+#import "MXImage3DPreviewViewController.h"
 #import "MXPhotoUtil.h"
+#import "MXImagePreviewAnimationTransition.h"
 #import <Masonry.h>
 
 static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectionViewCell";
-@interface MXImagePickerViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate>
-
-@property(nonatomic, strong) UICollectionView *photoCollectionView;
+@interface MXImagePickerViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UIViewControllerPreviewingDelegate>
 @property (nonatomic, strong) NSMutableArray<MXImageModel *> *dataArray;
 
 //长按移动手势
 @property(nonatomic, strong) UILongPressGestureRecognizer *longPressGesture;
+//此控制器push的转场动画
+@property(nonatomic, strong) MXImagePreviewAnimationTransition *animatedTransiton;
 @end
 
 @implementation MXImagePickerViewController
@@ -31,6 +33,14 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     [self initNavBar];
     [self initPhotoCollectionView];
     [self initGestureRecognizers];
+//    [self init3DTouch];
+    
+}
+
+//
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.navigationController.delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +82,7 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     }
 }
 
+
 #pragma mark - DataSource
 - (void)initDataSource {
     [[MXPhotoUtil sharedInstance] fetchAllPhotosWithResultsWithBlock:^(NSArray<MXImageModel *> *assetsArray) {
@@ -93,13 +104,27 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MXImagePickerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kImagePickerCollectionViewCell forIndexPath:indexPath];
     cell.imageModel = self.dataArray[indexPath.row];
+    
+//    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+//        [self registerForPreviewingWithDelegate:self sourceView:cell];
+//    } else {
+//        NSLog(@"3D Touch 无效");
+//    }
+    
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"点击了item:%ld", (long)indexPath.row);
-    [collectionView cellForItemAtIndexPath:indexPath].backgroundColor = [UIColor redColor];
+    
+    MXImageModel *selectModel = [self.dataArray objectAtIndex:indexPath.row];
+    MXImage3DPreviewViewController *previewVc = [[MXImage3DPreviewViewController alloc] init];
+    previewVc.model = selectModel;
+    self.navigationController.delegate = self.animatedTransiton;
+    [self.navigationController pushViewController:previewVc animated:YES];
+    
+    NSLog(@"%@", NSStringFromCGRect(selectModel.mainScreenFrame));
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -117,8 +142,22 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
 }
 
 #pragma mark - getter & setter
+- (MXImagePreviewAnimationTransition *)animatedTransiton {
+    if (_animatedTransiton == nil) {
+        _animatedTransiton = [[MXImagePreviewAnimationTransition alloc] init];
+    }
+    return _animatedTransiton;
+}
+
 
 #pragma mark - method
+
+- (void)init3DTouch {
+    // 如果开启了3D touch
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        [self registerForPreviewingWithDelegate:(id)self sourceView:self.photoCollectionView];
+    }
+}
 
 - (void)initGestureRecognizers {
     if (self.photoCollectionView == nil) {
@@ -131,6 +170,8 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     [self.photoCollectionView addGestureRecognizer:_longPressGesture];
     
 }
+
+
 
 - (void)handleLongPress:(UILongPressGestureRecognizer *)longPressGesture {
     //判断手势状态
@@ -147,7 +188,7 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
             break;
         case UIGestureRecognizerStateChanged:
             //移动过程当中随时更新cell位置
-
+            
             if (@available(iOS 9.0, *)) {
                 [self.photoCollectionView updateInteractiveMovementTargetPosition:[longPressGesture locationInView:self.photoCollectionView]];
             } else {
@@ -171,5 +212,30 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
             break;
     }
 }
+
+#pragma mark - UIViewControllerPreviewingDelegate
+
+- (void)previewingContext:(nonnull id<UIViewControllerPreviewing>)previewingContext commitViewController:(nonnull UIViewController *)viewControllerToCommit {
+    [self showDetailViewController:viewControllerToCommit sender:self];
+}
+
+- (nullable UIViewController *)previewingContext:(nonnull id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    MXImage3DPreviewViewController *detailVc = [[MXImage3DPreviewViewController alloc] init];
+    MXImagePickerCollectionViewCell *touchingCell = (MXImagePickerCollectionViewCell *)[previewingContext sourceView];
+
+    //设置非虚化区域.
+    CGRect cellFrame = touchingCell.frame;
+    NSLog(@"%@", NSStringFromCGRect(cellFrame));
+    previewingContext.sourceRect = cellFrame;
+//
+    //获取cell图片
+    NSIndexPath *touchingIndexPath = [self.photoCollectionView indexPathForCell:touchingCell];
+    MXImageModel *model = self.dataArray[touchingIndexPath.row];
+    detailVc.model = model;
+    
+    return detailVc;
+}
+
+
 
 @end

@@ -10,4 +10,5 @@
 
 @interface MXImagePickerViewController : MXBaseViewController
 
+@property(nonatomic, strong) UICollectionView *photoCollectionView;
 @end

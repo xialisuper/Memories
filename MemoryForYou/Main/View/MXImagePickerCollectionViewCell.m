@@ -11,7 +11,6 @@
 #import "MXImageModel.h"
 
 @interface MXImagePickerCollectionViewCell ()
-@property(nonatomic, strong) UIImageView *imageView;
 @end
 
 @implementation MXImagePickerCollectionViewCell

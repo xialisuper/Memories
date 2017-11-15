@@ -13,6 +13,13 @@
 		5E371E941FAB001E009D8026 /* MXImagePickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E371E931FAB001E009D8026 /* MXImagePickerCollectionViewCell.m */; };
 		5E371E971FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E371E961FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m */; };
 		5E6C42F41FB2B31A00C99D39 /* MXImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C42F31FB2B31A00C99D39 /* MXImagePreviewViewController.m */; };
+		5E6C42F71FB3F81000C99D39 /* MXImage3DPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6C42F61FB3F81000C99D39 /* MXImage3DPreviewViewController.m */; };
+		5E83E9CF1FBA80C3009A5C5C /* MXImagePreviewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E83E9CE1FBA80C3009A5C5C /* MXImagePreviewAnimator.m */; };
+		5E83E9D21FBAD05A009A5C5C /* MXBaseNavAnimationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E83E9D11FBAD05A009A5C5C /* MXBaseNavAnimationTransition.m */; };
+		5E83E9D51FBAD116009A5C5C /* MXImagePreviewAnimationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E83E9D41FBAD116009A5C5C /* MXImagePreviewAnimationTransition.m */; };
+		5E83E9D81FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E83E9D71FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.m */; };
+		5E83E9DF1FBBD581009A5C5C /* MXStringConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E83E9DE1FBBD581009A5C5C /* MXStringConstant.m */; };
+		5E83E9E21FBBD58E009A5C5C /* MXThemeConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E83E9E11FBBD58E009A5C5C /* MXThemeConstant.m */; };
 		5E9FF1881F79636E00283FBD /* MXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1871F79636E00283FBD /* MXAppDelegate.m */; };
 		5E9FF1901F79636E00283FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18F1F79636E00283FBD /* Assets.xcassets */; };
 		5E9FF1961F79636E00283FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1951F79636E00283FBD /* main.m */; };
@@ -37,6 +44,21 @@
 		5E371E961FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXPhotoPickerCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		5E6C42F21FB2B31A00C99D39 /* MXImagePreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImagePreviewViewController.h; sourceTree = "<group>"; };
 		5E6C42F31FB2B31A00C99D39 /* MXImagePreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImagePreviewViewController.m; sourceTree = "<group>"; };
+		5E6C42F51FB3F81000C99D39 /* MXImage3DPreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImage3DPreviewViewController.h; sourceTree = "<group>"; };
+		5E6C42F61FB3F81000C99D39 /* MXImage3DPreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImage3DPreviewViewController.m; sourceTree = "<group>"; };
+		5E83E9CD1FBA80C3009A5C5C /* MXImagePreviewAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImagePreviewAnimator.h; sourceTree = "<group>"; };
+		5E83E9CE1FBA80C3009A5C5C /* MXImagePreviewAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImagePreviewAnimator.m; sourceTree = "<group>"; };
+		5E83E9D01FBAD05A009A5C5C /* MXBaseNavAnimationTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXBaseNavAnimationTransition.h; sourceTree = "<group>"; };
+		5E83E9D11FBAD05A009A5C5C /* MXBaseNavAnimationTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXBaseNavAnimationTransition.m; sourceTree = "<group>"; };
+		5E83E9D31FBAD116009A5C5C /* MXImagePreviewAnimationTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImagePreviewAnimationTransition.h; sourceTree = "<group>"; };
+		5E83E9D41FBAD116009A5C5C /* MXImagePreviewAnimationTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImagePreviewAnimationTransition.m; sourceTree = "<group>"; };
+		5E83E9D61FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImagePreviewPopAnimator.h; sourceTree = "<group>"; };
+		5E83E9D71FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImagePreviewPopAnimator.m; sourceTree = "<group>"; };
+		5E83E9D91FBBD533009A5C5C /* MXConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXConstant.h; sourceTree = "<group>"; };
+		5E83E9DD1FBBD581009A5C5C /* MXStringConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXStringConstant.h; sourceTree = "<group>"; };
+		5E83E9DE1FBBD581009A5C5C /* MXStringConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXStringConstant.m; sourceTree = "<group>"; };
+		5E83E9E01FBBD58E009A5C5C /* MXThemeConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXThemeConstant.h; sourceTree = "<group>"; };
+		5E83E9E11FBBD58E009A5C5C /* MXThemeConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXThemeConstant.m; sourceTree = "<group>"; };
 		5E9FF1831F79636E00283FBD /* MemoryForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9FF1861F79636E00283FBD /* MXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXAppDelegate.h; sourceTree = "<group>"; };
 		5E9FF1871F79636E00283FBD /* MXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXAppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +95,14 @@
 		5E371E8F1FAAFFD7009D8026 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5EBAF2FE1F7F6D8A00C627CA /* MXAudioPlayViewController.h */,
+				5EBAF2FF1F7F6D8A00C627CA /* MXAudioPlayViewController.m */,
+				5E371E8C1FAAFF2A009D8026 /* MXImagePickerViewController.h */,
+				5E371E8D1FAAFF2A009D8026 /* MXImagePickerViewController.m */,
+				5E6C42F21FB2B31A00C99D39 /* MXImagePreviewViewController.h */,
+				5E6C42F31FB2B31A00C99D39 /* MXImagePreviewViewController.m */,
+				5E6C42F51FB3F81000C99D39 /* MXImage3DPreviewViewController.h */,
+				5E6C42F61FB3F81000C99D39 /* MXImage3DPreviewViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -95,6 +125,33 @@
 				5EFB253C1FAFF128006A50AA /* MXImageModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5E83E9C91FB94EB8009A5C5C /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				5E83E9CD1FBA80C3009A5C5C /* MXImagePreviewAnimator.h */,
+				5E83E9CE1FBA80C3009A5C5C /* MXImagePreviewAnimator.m */,
+				5E83E9D61FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.h */,
+				5E83E9D71FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.m */,
+				5E83E9D01FBAD05A009A5C5C /* MXBaseNavAnimationTransition.h */,
+				5E83E9D11FBAD05A009A5C5C /* MXBaseNavAnimationTransition.m */,
+				5E83E9D31FBAD116009A5C5C /* MXImagePreviewAnimationTransition.h */,
+				5E83E9D41FBAD116009A5C5C /* MXImagePreviewAnimationTransition.m */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		5E83E9DC1FBBD53C009A5C5C /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				5E83E9D91FBBD533009A5C5C /* MXConstant.h */,
+				5E83E9DD1FBBD581009A5C5C /* MXStringConstant.h */,
+				5E83E9DE1FBBD581009A5C5C /* MXStringConstant.m */,
+				5E83E9E01FBBD58E009A5C5C /* MXThemeConstant.h */,
+				5E83E9E11FBBD58E009A5C5C /* MXThemeConstant.m */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 		5E9FF17A1F79636E00283FBD = {
@@ -123,7 +180,9 @@
 				5EBAF3031F7F728700C627CA /* Main */,
 				5EBAF3021F7F727500C627CA /* Base */,
 				5EBAF3011F7F726300C627CA /* Util */,
+				5E83E9C91FB94EB8009A5C5C /* Custom */,
 				5E9FF18F1F79636E00283FBD /* Assets.xcassets */,
+				5E83E9DC1FBBD53C009A5C5C /* Const */,
 				5EFB253F1FAFF429006A50AA /* Supporting Files */,
 			);
 			path = MemoryForYou;
@@ -157,12 +216,6 @@
 				5E371E911FAAFFEC009D8026 /* Model */,
 				5E371E901FAAFFE4009D8026 /* View */,
 				5E371E8F1FAAFFD7009D8026 /* Controller */,
-				5EBAF2FE1F7F6D8A00C627CA /* MXAudioPlayViewController.h */,
-				5EBAF2FF1F7F6D8A00C627CA /* MXAudioPlayViewController.m */,
-				5E371E8C1FAAFF2A009D8026 /* MXImagePickerViewController.h */,
-				5E371E8D1FAAFF2A009D8026 /* MXImagePickerViewController.m */,
-				5E6C42F21FB2B31A00C99D39 /* MXImagePreviewViewController.h */,
-				5E6C42F31FB2B31A00C99D39 /* MXImagePreviewViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -325,6 +378,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E83E9D21FBAD05A009A5C5C /* MXBaseNavAnimationTransition.m in Sources */,
+				5E83E9D81FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.m in Sources */,
+				5E6C42F71FB3F81000C99D39 /* MXImage3DPreviewViewController.m in Sources */,
 				5EFB253D1FAFF128006A50AA /* MXImageModel.m in Sources */,
 				5E9FF1961F79636E00283FBD /* main.m in Sources */,
 				5E371E8A1FAABBCE009D8026 /* MXTableViewController.m in Sources */,
@@ -332,8 +388,12 @@
 				5EBAF3061F7F72B100C627CA /* MXPhotoUtil.m in Sources */,
 				5E371E971FAB252F009D8026 /* MXPhotoPickerCollectionViewFlowLayout.m in Sources */,
 				5E9FF1881F79636E00283FBD /* MXAppDelegate.m in Sources */,
+				5E83E9CF1FBA80C3009A5C5C /* MXImagePreviewAnimator.m in Sources */,
 				5EBAF3001F7F6D8A00C627CA /* MXAudioPlayViewController.m in Sources */,
+				5E83E9D51FBAD116009A5C5C /* MXImagePreviewAnimationTransition.m in Sources */,
 				5E371E8E1FAAFF2A009D8026 /* MXImagePickerViewController.m in Sources */,
+				5E83E9E21FBBD58E009A5C5C /* MXThemeConstant.m in Sources */,
+				5E83E9DF1FBBD581009A5C5C /* MXStringConstant.m in Sources */,
 				5EBAF2FD1F7F6D5300C627CA /* MXBaseViewController.m in Sources */,
 				5E6C42F41FB2B31A00C99D39 /* MXImagePreviewViewController.m in Sources */,
 				5E371E871FAABBBB009D8026 /* MXBaseNavigationController.m in Sources */,

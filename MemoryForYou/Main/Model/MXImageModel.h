@@ -14,4 +14,10 @@
 @property (nonatomic, strong) PHAsset *photoAsset;
 - (instancetype)initWithPhAsset:(PHAsset *)asset;
 
+/**
+ 返回origin图片以全屏幕为基础的frame
+
+ @return frame
+ */
+- (CGRect)mainScreenFrame;
 @end
