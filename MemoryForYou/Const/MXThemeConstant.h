@@ -8,6 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MXThemeConstant : NSObject
-
-@end
+#define MXNavigationTransitionTimeinterval 0.6f

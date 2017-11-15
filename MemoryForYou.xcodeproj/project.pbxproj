@@ -130,14 +130,7 @@
 		5E83E9C91FB94EB8009A5C5C /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				5E83E9CD1FBA80C3009A5C5C /* MXImagePreviewAnimator.h */,
-				5E83E9CE1FBA80C3009A5C5C /* MXImagePreviewAnimator.m */,
-				5E83E9D61FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.h */,
-				5E83E9D71FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.m */,
-				5E83E9D01FBAD05A009A5C5C /* MXBaseNavAnimationTransition.h */,
-				5E83E9D11FBAD05A009A5C5C /* MXBaseNavAnimationTransition.m */,
-				5E83E9D31FBAD116009A5C5C /* MXImagePreviewAnimationTransition.h */,
-				5E83E9D41FBAD116009A5C5C /* MXImagePreviewAnimationTransition.m */,
+				5E83E9E31FBBE5C8009A5C5C /* AnimationTransition */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -152,6 +145,21 @@
 				5E83E9E11FBBD58E009A5C5C /* MXThemeConstant.m */,
 			);
 			path = Const;
+			sourceTree = "<group>";
+		};
+		5E83E9E31FBBE5C8009A5C5C /* AnimationTransition */ = {
+			isa = PBXGroup;
+			children = (
+				5E83E9CD1FBA80C3009A5C5C /* MXImagePreviewAnimator.h */,
+				5E83E9CE1FBA80C3009A5C5C /* MXImagePreviewAnimator.m */,
+				5E83E9D61FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.h */,
+				5E83E9D71FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.m */,
+				5E83E9D01FBAD05A009A5C5C /* MXBaseNavAnimationTransition.h */,
+				5E83E9D11FBAD05A009A5C5C /* MXBaseNavAnimationTransition.m */,
+				5E83E9D31FBAD116009A5C5C /* MXImagePreviewAnimationTransition.h */,
+				5E83E9D41FBAD116009A5C5C /* MXImagePreviewAnimationTransition.m */,
+			);
+			path = AnimationTransition;
 			sourceTree = "<group>";
 		};
 		5E9FF17A1F79636E00283FBD = {
