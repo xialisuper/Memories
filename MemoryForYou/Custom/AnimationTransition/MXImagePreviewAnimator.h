@@ -6,9 +6,8 @@
 //  Copyright © 2017年 xialisuper. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "MXBaseNavAnimator.h"
 
-@interface MXImagePreviewAnimator : NSObject <UIViewControllerAnimatedTransitioning>
+@interface MXImagePreviewAnimator : MXBaseNavAnimator
 
 @end

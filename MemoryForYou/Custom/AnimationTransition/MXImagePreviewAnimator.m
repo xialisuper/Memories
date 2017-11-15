@@ -16,10 +16,6 @@
 
 @implementation MXImagePreviewAnimator
 
-- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
-    return MXNavigationTransitionDuration;
-}
-
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
     //获取动画前后两个VC 和 发生的容器containerView
     MXImagePickerViewController *fromVC = (MXImagePickerViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
