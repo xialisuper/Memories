@@ -11,5 +11,6 @@
 @interface MXImage3DPreviewViewController : MXBaseViewController
 
 @property(nonatomic, strong) MXImageModel *model;
+@property(nonatomic, strong) UIImageView *imageView;
 
 @end

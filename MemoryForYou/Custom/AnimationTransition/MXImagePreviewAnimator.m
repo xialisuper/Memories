@@ -46,7 +46,7 @@
     [containerView addSubview:whiteContainFakeView];
     
     //过度图片
-    [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:cell.imageModel.photoAsset WithSize:[cell.imageModel mainScreenFrame].size block:^(UIImage *image, NSDictionary *info) {
+    [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:cell.imageModel.photoAsset WithSize:[cell.imageModel mainScreenFrame].size synchronous:(BOOL)YES block:^(UIImage *image, NSDictionary *info) {
         dispatch_async(dispatch_get_main_queue(), ^{
             UIImageView *transitionImageView = [[UIImageView alloc] initWithImage:image];
             transitionImageView.frame = cell.frame;
@@ -71,7 +71,6 @@
                 [transitionContext completeTransition:!wasCancelled];
             }];
         });
-        
         
     }];
     

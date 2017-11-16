@@ -13,6 +13,7 @@
 #import "MXPhotoUtil.h"
 #import "MXImagePreviewAnimationTransition.h"
 #import <Masonry.h>
+#import "MXImageModel+MXCellFrame.h"
 
 static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectionViewCell";
 @interface MXImagePickerViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UIViewControllerPreviewingDelegate>
@@ -119,6 +120,12 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     NSLog(@"点击了item:%ld", (long)indexPath.row);
     
     MXImageModel *selectModel = [self.dataArray objectAtIndex:indexPath.row];
+    //赋值model frame
+    MXImagePickerCollectionViewCell *cell = (MXImagePickerCollectionViewCell *)[self.photoCollectionView cellForItemAtIndexPath:indexPath];
+    //吧cell.frame转换到当前屏幕的位置而不是collectionView的位置.
+    
+    selectModel.cellRect = [self.view convertRect:cell.frame fromView:self.photoCollectionView];
+    
     MXImage3DPreviewViewController *previewVc = [[MXImage3DPreviewViewController alloc] init];
     previewVc.model = selectModel;
     self.navigationController.delegate = self.animatedTransiton;

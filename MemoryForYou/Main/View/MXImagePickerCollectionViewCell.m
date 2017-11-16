@@ -35,7 +35,7 @@
     PHAsset *asset = imageModel.photoAsset;
     
     @WeakObj(self);
-    [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:asset WithSize:self.contentView.bounds.size block:^(UIImage *image, NSDictionary *info) {
+    [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:asset WithSize:self.contentView.bounds.size synchronous:(BOOL)NO block:^(UIImage *image, NSDictionary *info) {
         @StrongObj(self);
         self.imageView.image = image;
     }];

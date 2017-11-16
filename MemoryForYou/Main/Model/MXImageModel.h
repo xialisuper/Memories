@@ -12,6 +12,9 @@
 @interface MXImageModel : NSObject
 
 @property (nonatomic, strong) PHAsset *photoAsset;
+
+@property(nonatomic, assign) CGRect cellRect;
+
 - (instancetype)initWithPhAsset:(PHAsset *)asset;
 
 /**

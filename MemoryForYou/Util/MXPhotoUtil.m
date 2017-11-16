@@ -109,11 +109,10 @@
     block(assetsArray);
 }
 
-- (void)photoUtilFetchOriginImageWith:(PHAsset *)asset block:(void (^)(UIImage *))block{
-    __block UIImage *resultImage = nil;
+- (void)photoUtilFetchOriginImageWith:(PHAsset *)asset synchronous:(BOOL)synchronous block:(void (^)(UIImage *))block {
 
     PHImageRequestOptions *phImageRequestOptions = [[PHImageRequestOptions alloc] init];
-    phImageRequestOptions.synchronous = YES;
+    phImageRequestOptions.synchronous = synchronous;
     [self.manager requestImageForAsset:asset
                             targetSize:PHImageManagerMaximumSize
                            contentMode:PHImageContentModeDefault
@@ -125,9 +124,10 @@
                          }];
 }
 
-- (void)photoUtilFetchThumbnailImageWith:(PHAsset *)asset WithSize:(CGSize)size block:(void (^)(UIImage *image, NSDictionary *info))handler {
+- (void)photoUtilFetchThumbnailImageWith:(PHAsset *)asset WithSize:(CGSize)size synchronous:(BOOL)synchronous block:(void (^)(UIImage *, NSDictionary *))handler {
     PHImageRequestOptions *phImageRequestOptions = [[PHImageRequestOptions alloc] init];
     phImageRequestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
+    phImageRequestOptions.synchronous = synchronous;
     // 在 PHImageManager 中，targetSize 等 size 都是使用 px 作为单位，因此需要对targetSize 中对传入的 Size 进行处理，宽高各自乘以 ScreenScale，从而得到正确的图片
     [self.manager requestImageForAsset:asset
                             targetSize:CGSizeMake(size.width * ScreenScale, size.height * ScreenScale)

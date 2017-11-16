@@ -8,9 +8,13 @@
 
 #import "MXImagePreviewAnimationTransition.h"
 #import "MXImagePreviewAnimator.h"
+#import "MXImagePreviewPopAnimator.h"
+#import "MXImagePreviewPercentDrivenInteractiveTransition.h"
 
 @interface MXImagePreviewAnimationTransition ()
 @property(nonatomic, strong) MXImagePreviewAnimator *imageAnimator;
+@property(nonatomic, strong) MXImagePreviewPopAnimator *imagePopAnimator;
+@property(nonatomic, strong) <#type#> *<#name#>
 @end
 
 @implementation MXImagePreviewAnimationTransition
@@ -20,9 +24,13 @@
     if (operation == UINavigationControllerOperationPush) {
         
         return self.imageAnimator;
+    } else if (operation == UINavigationControllerOperationPop) {
+        return self.imagePopAnimator;
     }
     return nil;
 }
+
+
 
 #pragma mark - getter & setter
 - (MXImagePreviewAnimator *)imageAnimator {
@@ -30,6 +38,13 @@
         _imageAnimator = [[MXImagePreviewAnimator alloc] init];
     }
     return _imageAnimator;
+}
+
+- (MXImagePreviewPopAnimator *)imagePopAnimator {
+    if (_imagePopAnimator == nil) {
+        _imagePopAnimator = [[MXImagePreviewPopAnimator alloc] init];
+    }
+    return _imagePopAnimator;
 }
 
 @end

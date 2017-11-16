@@ -18,8 +18,8 @@
 
 - (void)fetchAllPhotosWithResultsWithBlock:(void (^)(NSArray <MXImageModel *> *assetsArray))block;
 
-- (void)photoUtilFetchOriginImageWith:(PHAsset *)asset block:(void (^)(UIImage *image))block;
 
+- (void)photoUtilFetchOriginImageWith:(PHAsset *)asset synchronous:(BOOL)synchronous block:(void (^)(UIImage *image))block;
 
 /**
  从PHAsset获取缩略图Image
@@ -28,7 +28,7 @@
  @param size 缩略图大小
  @param handler 含有image的回调 多次
  */
-- (void)photoUtilFetchThumbnailImageWith:(PHAsset *)asset WithSize:(CGSize)size block:(void (^)(UIImage *image, NSDictionary *info))handler;
+- (void)photoUtilFetchThumbnailImageWith:(PHAsset *)asset WithSize:(CGSize)size synchronous:(BOOL)synchronous block:(void (^)(UIImage *image, NSDictionary *info))handler;
 
 /**
  刷新当前相册授权状态

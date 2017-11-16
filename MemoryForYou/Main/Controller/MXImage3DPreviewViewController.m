@@ -12,7 +12,6 @@
 #import <Masonry.h>
 
 @interface MXImage3DPreviewViewController ()
-@property(nonatomic, strong) UIImageView *imageView;
 @end
 
 @implementation MXImage3DPreviewViewController
@@ -48,7 +47,7 @@
 //        self.imageView.image = image;
 //    }];
     
-    [[MXPhotoUtil sharedInstance] photoUtilFetchOriginImageWith:model.photoAsset block:^(UIImage *image) {
+    [[MXPhotoUtil sharedInstance] photoUtilFetchOriginImageWith:model.photoAsset synchronous:YES block:^(UIImage *image) {
         self.imageView.image = image;
     }];
 }

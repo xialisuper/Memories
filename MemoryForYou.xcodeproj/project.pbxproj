@@ -66,6 +66,7 @@
 		5E83E9E91FBBEB47009A5C5C /* MXImagePreviewPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImagePreviewPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
 		5E83E9EB1FBBEF1E009A5C5C /* MXBaseNavAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXBaseNavAnimator.h; sourceTree = "<group>"; };
 		5E83E9EC1FBBEF1E009A5C5C /* MXBaseNavAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXBaseNavAnimator.m; sourceTree = "<group>"; };
+		5E83E9F11FBC2178009A5C5C /* MXImageModel+MXCellFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MXImageModel+MXCellFrame.h"; sourceTree = "<group>"; };
 		5E9FF1831F79636E00283FBD /* MemoryForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9FF1861F79636E00283FBD /* MXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXAppDelegate.h; sourceTree = "<group>"; };
 		5E9FF1871F79636E00283FBD /* MXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXAppDelegate.m; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 			children = (
 				5EFB253B1FAFF128006A50AA /* MXImageModel.h */,
 				5EFB253C1FAFF128006A50AA /* MXImageModel.m */,
+				5E83E9F11FBC2178009A5C5C /* MXImageModel+MXCellFrame.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
