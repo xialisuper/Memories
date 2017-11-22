@@ -123,15 +123,12 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     //赋值model frame
     MXImagePickerCollectionViewCell *cell = (MXImagePickerCollectionViewCell *)[self.photoCollectionView cellForItemAtIndexPath:indexPath];
     //吧cell.frame转换到当前屏幕的位置而不是collectionView的位置.
-    
     selectModel.cellRect = [self.view convertRect:cell.frame fromView:self.photoCollectionView];
     
     MXImage3DPreviewViewController *previewVc = [[MXImage3DPreviewViewController alloc] init];
     previewVc.model = selectModel;
     self.navigationController.delegate = self.animatedTransiton;
     [self.navigationController pushViewController:previewVc animated:YES];
-    
-    NSLog(@"%@", NSStringFromCGRect(selectModel.mainScreenFrame));
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath{

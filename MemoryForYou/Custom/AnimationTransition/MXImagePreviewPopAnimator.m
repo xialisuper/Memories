@@ -25,52 +25,61 @@
     MXImage3DPreviewViewController *fromVC = (MXImage3DPreviewViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIView *containerView = [transitionContext containerView];
     
-    //collectionView在最底层
-    UIView *toView = toVC.view;
-    [containerView addSubview:toView];
+    //即将恢复的cell
+    MXImagePickerCollectionViewCell *cell =(MXImagePickerCollectionViewCell *)[toVC.photoCollectionView cellForItemAtIndexPath:[[toVC.photoCollectionView indexPathsForSelectedItems] firstObject]];
     
-    //图片的白色遮挡
     MXImageModel *currentModel = fromVC.model;
-    UIView *whiteCellFakeView = [[UIView alloc] initWithFrame:currentModel.cellRect];
-    [containerView addSubview:whiteCellFakeView];
     
-    //整体的白色渐变背景
-    UIView *whiteContainFakeView = [[UIView alloc] initWithFrame:containerView.bounds];
-    whiteContainFakeView.backgroundColor = [UIColor whiteColor];
-    whiteContainFakeView.alpha = 1;
-    [containerView addSubview:whiteContainFakeView];
+    cell.imageView.hidden = YES;
+    [containerView addSubview:toVC.view];
+    [containerView addSubview:fromVC.view];
     
-    
-    
-    [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:fromVC.model.photoAsset WithSize:fromVC.model.cellRect.size synchronous:(BOOL)YES block:^(UIImage *image, NSDictionary *info) {
+    if (transitionContext.isInteractive) {    //手势交互
         
-        
-        UIImageView *transitionImageView = [[UIImageView alloc] initWithImage:fromVC.imageView.image];
-        transitionImageView.frame = [currentModel mainScreenFrame];
-        [containerView addSubview:transitionImageView];
+        //[self transitionDuration:transitionContext]
         [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseIn animations:^{
             
-            //container的bounds包括导航栏.
-//            transitionImageView.frame = CGRectMake(fromVC.model.cellRect.origin.x, fromVC.model.cellRect.origin.y + MXSafeAreaTopHeight, fromVC.model.cellRect.size.width, fromVC.model.cellRect.size.height);
-            transitionImageView.image = image;
-            transitionImageView.frame = fromVC.model.cellRect;
-            whiteContainFakeView.alpha = 0;
-            
+            fromVC.view.backgroundColor = COLOR_RGB(0, 0, 0, 0);
         } completion:^(BOOL finished) {
-            [whiteCellFakeView removeFromSuperview];
-            [whiteContainFakeView removeFromSuperview];
-            [transitionImageView removeFromSuperview];
-            
             BOOL wasCancelled = [transitionContext transitionWasCancelled];
             //设置transitionContext通知系统动画执行完毕
             [transitionContext completeTransition:!wasCancelled];
+            
+            if ([transitionContext transitionWasCancelled]) {    //手势取消
+                
+            } else {
+                cell.imageView.hidden = NO;
+                //            [transitionImageView removeFromSuperview];
+            }
         }];
-    }];
-    
-    
+    } else {    //非手势
+        
+        __block UIImageView *transitionImageView = [[UIImageView alloc] initWithFrame:[currentModel mainScreenFrame]];
+        [containerView addSubview:transitionImageView];
+        
+        [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:fromVC.model.photoAsset WithSize:fromVC.model.cellRect.size synchronous:(BOOL)YES block:^(UIImage *image, NSDictionary *info) {
+            transitionImageView.image = image;
+            
+        }];
+        
+        [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            
+            transitionImageView.frame = fromVC.model.cellRect;
+            fromVC.view.alpha = 0;
+            
+        } completion:^(BOOL finished) {
+            [transitionImageView removeFromSuperview];
+            cell.imageView.hidden = NO;
+            
+            //设置transitionContext通知系统动画执行完毕
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        }];
+    }
 }
 
-
+- (void)interactiveAnimateTransition:(nonnull id<UIViewControllerContextTransitioning>)transitionContext {
+    
+}
 
 
 @end

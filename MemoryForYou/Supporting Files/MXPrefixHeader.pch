@@ -24,9 +24,16 @@
 
 //屏幕相关
 #define ScreenScale ([[UIScreen mainScreen] scale])
+#define MXScreenHeight [UIScreen mainScreen].bounds.size.height
+#define MXScreenWidth [UIScreen mainScreen].bounds.size.width
 
 //weakself strongself
 #define WeakObj(o) try{}@finally{} __weak typeof(o) o##Weak = o;
 #define StrongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
+
+// 颜色获取
+#define COLOR_W(W, A)   [UIColor colorWithWhite:W/255.0 alpha:A]
+#define COLOR_RGB(R,G,B,A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+#define COLOR_HEX(hex) [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 green:((float)((hex & 0xFF00) >> 8))/255.0 blue:((float)(hex & 0xFF))/255.0 alpha:1.0]
 
 #import "MXConstant.h"

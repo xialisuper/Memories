@@ -22,56 +22,40 @@
     MXImage3DPreviewViewController *toVC = (MXImage3DPreviewViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *containerView = [transitionContext containerView];
     
-    //控制器的view
-    UIView *toView = toVC.view;
-    toView.hidden = YES;
-    UIView *fromView = fromVC.view;
-    [containerView addSubview:fromView];
-    [containerView addSubview:toView];
-    
     //被选中的cell
     MXImagePickerCollectionViewCell *cell =(MXImagePickerCollectionViewCell *)[fromVC.photoCollectionView cellForItemAtIndexPath:[[fromVC.photoCollectionView indexPathsForSelectedItems] firstObject]];
     
-    //覆盖被选中cell的假白色view (图片被移走的假象)
-    UIView *whiteCellFakeView = [[UIView alloc] initWithFrame:cell.frame];
-    //此处白色 红色调试
-    whiteCellFakeView.backgroundColor = [UIColor redColor];
-    [containerView addSubview:whiteCellFakeView];
-    
-    //覆盖fromVC的白色背景view 会随着拖动渐变透明度
-    UIView *whiteContainFakeView = [[UIView alloc] initWithFrame:containerView.bounds];
-    //黑色调试
-    whiteContainFakeView.backgroundColor = [UIColor whiteColor];
-    whiteContainFakeView.alpha = 0;
-    [containerView addSubview:whiteContainFakeView];
+    CGRect containerCellRect = [containerView convertRect:cell.frame fromView:fromVC.photoCollectionView];
     
     //过度图片
-    [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:cell.imageModel.photoAsset WithSize:[cell.imageModel mainScreenFrame].size synchronous:(BOOL)YES block:^(UIImage *image, NSDictionary *info) {
+    __block UIImageView *transitionImageView = [[UIImageView alloc] initWithFrame:containerCellRect];
+    transitionImageView.backgroundColor = [UIColor lightGrayColor];
+    
+    //覆盖被选中cell的假白色view (图片被移走的假象)
+    cell.imageView.hidden = YES;
+    toVC.view.alpha = 0;
+    toVC.imageView.hidden = YES;
+    
+    [containerView addSubview:toVC.view];
+    [containerView addSubview:transitionImageView];
+//
+    [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:cell.imageModel.photoAsset WithSize:[cell.imageModel mainScreenFrame].size synchronous:(BOOL)NO block:^(UIImage *image, NSDictionary *info) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            UIImageView *transitionImageView = [[UIImageView alloc] initWithImage:image];
-            transitionImageView.frame = cell.frame;
-            [containerView addSubview:transitionImageView];
-            
-            //动画
-            [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveLinear animations:^{
-                
-                transitionImageView.frame = [cell.imageModel mainScreenFrame] ;
-                whiteContainFakeView.alpha = 1;
-                
-            } completion:^(BOOL finished) {
-                
-                toView.hidden = NO;
-                
-                [whiteCellFakeView removeFromSuperview];
-                [whiteContainFakeView removeFromSuperview];
-                [transitionImageView removeFromSuperview];
-                
-                BOOL wasCancelled = [transitionContext transitionWasCancelled];
-                //设置transitionContext通知系统动画执行完毕
-                [transitionContext completeTransition:!wasCancelled];
-            }];
+            transitionImageView.image = image;
         });
+    }];
+    
+    //动画
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveLinear animations:^{
+        transitionImageView.frame = [cell.imageModel mainScreenFrame] ;
+        toVC.view.alpha = 1;
         
+    } completion:^(BOOL finished) {
+        transitionImageView.hidden = YES;
+        toVC.imageView.hidden = NO;
+//        BOOL wasCancelled = [transitionContext transitionWasCancelled];
+        //设置transitionContext通知系统动画执行完毕
+        [transitionContext completeTransition:YES];
     }];
     
 }

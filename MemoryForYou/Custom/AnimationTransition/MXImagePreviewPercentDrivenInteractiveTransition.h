@@ -10,4 +10,9 @@
 
 @interface MXImagePreviewPercentDrivenInteractiveTransition : MXBaseNavPercentDrivenInteractiveTransition
 
+//是否在手势中
+@property(nonatomic, assign) BOOL interacting;
+
+- (void)handleInteractionGesture:(UIGestureRecognizer *)gesture withViewController:(UIViewController *)viewController;
+
 @end

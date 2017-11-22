@@ -10,4 +10,6 @@
 
 @interface MXImagePreviewAnimationTransition : MXBaseNavAnimationTransition
 
+- (void)handleInteractionGesture:(UIGestureRecognizer *)gesture withViewController:(UIViewController *)viewController;
+
 @end

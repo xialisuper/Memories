@@ -15,10 +15,6 @@
     return MXNavigationTransitionDuration;
 }
 
-//交给子类去重写.
-- (void)animateTransition:(nonnull id<UIViewControllerContextTransitioning>)transitionContext {
-    
-}
 
 
 
