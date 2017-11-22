@@ -100,19 +100,24 @@
         case UIGestureRecognizerStateEnded: {
             
             if (velocityPoint.y <= 0) {    //向上滑动
-                [UIView animateWithDuration:0.2 animations:^{
+                [UIView animateWithDuration:.2f animations:^{
                     self.imageView.center = self.view.center;
                     self.imageView.transform = CGAffineTransformMakeScale(1, 1);
                 } completion:^(BOOL finished) {
                     self.imageView.transform = CGAffineTransformIdentity;
                 }];
             } else {    //向下滑动
+//                __block UIImage *tempImage = nil;
+//                [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:self.model.photoAsset WithSize:self.model.cellRect.size synchronous:(BOOL)YES block:^(UIImage *image, NSDictionary *info) {
+//                        tempImage = image;
+//
+//                }];
+                [UIView animateWithDuration:.2f animations:^{
                 
-                [UIView animateWithDuration:0.2f delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
                     self.imageView.frame = self.model.cellRect;
+//                    self.imageView.image  = tempImage;
                 } completion:^(BOOL finished) {
                     
-                    self.imageView.transform = CGAffineTransformIdentity;
                 }];
             }
         }

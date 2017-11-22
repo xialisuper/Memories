@@ -23,8 +23,6 @@
     
     CGPoint translation = [gesture translationInView:gesture.view];
     
-    NSLog(@"translation.y = %f", translation.y);
-    
     CGFloat percent = (translation.y / MXScreenHeight);
     
     percent = percent < 0 ? 0 : percent;
@@ -40,7 +38,6 @@
     CGPoint velPoint = [panGesture velocityInView:panGesture.view];
     //百分比
     CGFloat percent = [self percentForGesture:(UIPanGestureRecognizer *)gesture];
-    NSLog(@"updateInteractiveTransition : %f", percent);
     
     
     switch (gesture.state) {

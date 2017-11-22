@@ -118,7 +118,7 @@
                            contentMode:PHImageContentModeDefault
                                options:phImageRequestOptions
                          resultHandler:^(UIImage *result, NSDictionary *info) {
-                             NSLog(@"photoUtilFetchOriginImageWith info: %@", info);
+//                             NSLog(@"photoUtilFetchOriginImageWith info: %@", info);
                              block(result);
 
                          }];

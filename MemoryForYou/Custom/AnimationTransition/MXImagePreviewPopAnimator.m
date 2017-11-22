@@ -36,7 +36,7 @@
     
     if (transitionContext.isInteractive) {    //手势交互
         
-        //[self transitionDuration:transitionContext]
+        //
         [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseIn animations:^{
             
             fromVC.view.backgroundColor = COLOR_RGB(0, 0, 0, 0);
@@ -49,7 +49,6 @@
                 
             } else {
                 cell.imageView.hidden = NO;
-                //            [transitionImageView removeFromSuperview];
             }
         }];
     } else {    //非手势
@@ -57,13 +56,12 @@
         __block UIImageView *transitionImageView = [[UIImageView alloc] initWithFrame:[currentModel mainScreenFrame]];
         [containerView addSubview:transitionImageView];
         
-        [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:fromVC.model.photoAsset WithSize:fromVC.model.cellRect.size synchronous:(BOOL)YES block:^(UIImage *image, NSDictionary *info) {
-            transitionImageView.image = image;
-            
-        }];
-        
         [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseIn animations:^{
             
+            [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:fromVC.model.photoAsset WithSize:fromVC.model.cellRect.size synchronous:(BOOL)YES block:^(UIImage *image, NSDictionary *info) {
+                transitionImageView.image = image;
+                
+            }];
             transitionImageView.frame = fromVC.model.cellRect;
             fromVC.view.alpha = 0;
             
