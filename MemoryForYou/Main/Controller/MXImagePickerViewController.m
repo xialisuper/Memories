@@ -13,6 +13,7 @@
 #import "MXPhotoUtil.h"
 #import "MXImagePreviewAnimationTransition.h"
 #import "MXImageModel+MXCellFrame.h"
+#import "MXImagePickerBottomView.h"
 #import <Masonry.h>
 //#import <ReactiveCocoa.h>
 
@@ -30,6 +31,9 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
 @property(nonatomic, assign, getter=isSelectingPhotos) BOOL selectingPhotos;
 //纪录被选中的cell的model
 @property(nonatomic, strong) NSMutableArray *selectedPhotosArray;
+
+//底部动条
+@property(nonatomic, strong) MXImagePickerBottomView *bottomView;
 
 @end
 
@@ -137,6 +141,7 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
 }
 
 #pragma mark - UICollectionViewDelegate
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"点击了item:%ld", (long)indexPath.row);
     self.currentSelectedIndexPath = indexPath;
@@ -181,6 +186,14 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
 
 
 #pragma mark - getter & setter
+
+- (MXImagePickerBottomView *)bottomView {
+    if (_bottomView == nil) {
+        _bottomView = [[MXImagePickerBottomView alloc] init];
+    }
+    return _bottomView;
+}
+
 - (MXImagePreviewAnimationTransition *)animatedTransiton {
     if (_animatedTransiton == nil) {
         _animatedTransiton = [[MXImagePreviewAnimationTransition alloc] init];
@@ -202,6 +215,14 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
 
 #pragma mark - method
 
+- (void)showAllSelectedPhotosBottomView {
+    
+}
+
+- (void)hideAllSelectedPhotosBottomView {
+    
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary<NSString *,id> *)change
@@ -210,8 +231,11 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
         //根据照片数组数量变化vc标题
         if (self.selectedPhotosArray.count) {
             self.title = [NSString stringWithFormat:NSLocalizedString(@"已选择%zd张照片", nil), self.selectedPhotosArray.count];
+           
+            [self.bottomView showBottomViewFromView:self.view];
         } else {
-            self.title = NSLocalizedString(@"照片", nil);
+            self.title = NSLocalizedString(@"选择项目", nil);
+            [self.bottomView hideHideBottomViewFromView:self.view];
         }
     }
 }
@@ -244,6 +268,7 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
     self.selectingPhotos = !self.isSelectingPhotos;
     if (self.isSelectingPhotos) {
         sender.title = NSLocalizedString(@"取消", nil);
+        self.title = NSLocalizedString(@"选择项目", nil);
     } else {
         sender.title = NSLocalizedString(@"选择", nil);
         //取消选择之后移除所有已选中的cell样式 清理model数据.
@@ -251,6 +276,7 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
             obj.selected = NO;
         }];
         [[self mutableArrayValueForKeyPath:kSelectedPhotosArray] removeAllObjects];
+        self.title = NSLocalizedString(@"照片", nil);
     }
 }
 
