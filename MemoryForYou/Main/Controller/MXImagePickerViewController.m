@@ -12,10 +12,13 @@
 #import "MXImage3DPreviewViewController.h"
 #import "MXPhotoUtil.h"
 #import "MXImagePreviewAnimationTransition.h"
-#import <Masonry.h>
 #import "MXImageModel+MXCellFrame.h"
+#import <Masonry.h>
+//#import <ReactiveCocoa.h>
 
 static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectionViewCell";
+static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
+
 @interface MXImagePickerViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UIViewControllerPreviewingDelegate>
 @property (nonatomic, strong) NSMutableArray<MXImageModel *> *dataArray;
 
@@ -53,9 +56,19 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:kSelectedPhotosArray];
+}
+
 #pragma mark - UI
 - (void)initNavBar {
-    self.title = NSLocalizedString(@"图片选择", nil);
+    
+    //监听数据model的属性. 变化UI.
+    //vc标题
+    self.title = NSLocalizedString(@"照片", nil);
+    [self addObserver:self forKeyPath:kSelectedPhotosArray options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld  context:NULL];
+    
+    //右侧按钮变化
     UIBarButtonItem *selectButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"选择", nil) style:UIBarButtonItemStyleDone target:self action:@selector(handleSelectBarButtonClickEvent:)];
     self.navigationItem.rightBarButtonItem = selectButton;
 }
@@ -138,9 +151,9 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
         selectModel.selected = !selectModel.isSelected;
         
         if (selectModel.selected) {
-            [self.selectedPhotosArray addObject:selectModel];
+            [[self mutableArrayValueForKey:kSelectedPhotosArray] addObject:selectModel];
         } else {
-            [self.selectedPhotosArray removeObject:selectModel];
+            [[self mutableArrayValueForKey:kSelectedPhotosArray] removeObject:selectModel];
         }
         
     } else {
@@ -189,6 +202,20 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
 
 #pragma mark - method
 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context {
+    if ([keyPath isEqualToString:kSelectedPhotosArray]) {
+        //根据照片数组数量变化vc标题
+        if (self.selectedPhotosArray.count) {
+            self.title = [NSString stringWithFormat:NSLocalizedString(@"已选择%zd张照片", nil), self.selectedPhotosArray.count];
+        } else {
+            self.title = NSLocalizedString(@"照片", nil);
+        }
+    }
+}
+
 - (void)conmmonConfig {
     self.selectingPhotos = NO;
 }
@@ -223,6 +250,7 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
         [self.dataArray enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             obj.selected = NO;
         }];
+        [[self mutableArrayValueForKeyPath:kSelectedPhotosArray] removeAllObjects];
     }
 }
 
