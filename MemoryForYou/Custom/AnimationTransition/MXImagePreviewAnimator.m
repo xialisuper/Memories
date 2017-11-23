@@ -23,7 +23,7 @@
     UIView *containerView = [transitionContext containerView];
     
     //被选中的cell
-    MXImagePickerCollectionViewCell *cell =(MXImagePickerCollectionViewCell *)[fromVC.photoCollectionView cellForItemAtIndexPath:[[fromVC.photoCollectionView indexPathsForSelectedItems] firstObject]];
+    MXImagePickerCollectionViewCell *cell =(MXImagePickerCollectionViewCell *)[fromVC.photoCollectionView cellForItemAtIndexPath:fromVC.currentSelectedIndexPath];
     
     CGRect containerCellRect = [containerView convertRect:cell.frame fromView:fromVC.photoCollectionView];
     

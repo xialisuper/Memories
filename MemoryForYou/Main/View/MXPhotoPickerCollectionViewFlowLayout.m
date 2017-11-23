@@ -8,12 +8,19 @@
 
 #import "MXPhotoPickerCollectionViewFlowLayout.h"
 
+static NSInteger const kNumOfCellsInRow = 4;
+static NSInteger const kMargin = 2;
+
 @implementation MXPhotoPickerCollectionViewFlowLayout
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.itemSize = CGSizeMake(150, 150);
-//        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        //同比与系统默认相册 上下间距都是2.
+        CGFloat width = (MXScreenWidth - (kNumOfCellsInRow - 1) * 2) / 4;
+        self.itemSize = CGSizeMake(width, width);
+        self.minimumLineSpacing = kMargin;
+        self.minimumInteritemSpacing = kMargin;
+        
     }
     return self;
 }

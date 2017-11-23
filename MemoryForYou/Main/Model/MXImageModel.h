@@ -15,6 +15,9 @@
 
 @property(nonatomic, assign) CGRect cellRect;
 
+//用来标记当前数据模型是否为选中状态. 与系统cell选中区分开来.
+@property(nonatomic, assign, getter=isSelected) BOOL selected;
+
 - (instancetype)initWithPhAsset:(PHAsset *)asset;
 
 /**
@@ -23,4 +26,6 @@
  @return frame
  */
 - (CGRect)mainScreenFrame;
+
+
 @end

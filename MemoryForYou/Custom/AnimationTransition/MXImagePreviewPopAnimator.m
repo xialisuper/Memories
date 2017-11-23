@@ -26,7 +26,7 @@
     UIView *containerView = [transitionContext containerView];
     
     //即将恢复的cell
-    MXImagePickerCollectionViewCell *cell =(MXImagePickerCollectionViewCell *)[toVC.photoCollectionView cellForItemAtIndexPath:[[toVC.photoCollectionView indexPathsForSelectedItems] firstObject]];
+    MXImagePickerCollectionViewCell *cell =(MXImagePickerCollectionViewCell *)[toVC.photoCollectionView cellForItemAtIndexPath:toVC.currentSelectedIndexPath];
     
     MXImageModel *currentModel = fromVC.model;
     

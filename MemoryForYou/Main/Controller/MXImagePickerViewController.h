@@ -11,4 +11,5 @@
 @interface MXImagePickerViewController : MXBaseViewController
 
 @property(nonatomic, strong) UICollectionView *photoCollectionView;
+@property(nonatomic, strong, readonly) NSIndexPath *currentSelectedIndexPath;
 @end

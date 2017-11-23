@@ -23,6 +23,11 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
 @property(nonatomic, strong) UILongPressGestureRecognizer *longPressGesture;
 //此控制器push的转场动画
 @property(nonatomic, strong) MXImagePreviewAnimationTransition *animatedTransiton;
+//当前是否是选择模式
+@property(nonatomic, assign, getter=isSelectingPhotos) BOOL selectingPhotos;
+//纪录被选中的cell的model
+@property(nonatomic, strong) NSMutableArray *selectedPhotosArray;
+
 @end
 
 @implementation MXImagePickerViewController
@@ -30,11 +35,11 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self conmmonConfig];
     [self initDataSource];
     [self initNavBar];
     [self initPhotoCollectionView];
     [self initGestureRecognizers];
-//    [self init3DTouch];
     
 }
 
@@ -51,6 +56,8 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
 #pragma mark - UI
 - (void)initNavBar {
     self.title = NSLocalizedString(@"图片选择", nil);
+    UIBarButtonItem *selectButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"选择", nil) style:UIBarButtonItemStyleDone target:self action:@selector(handleSelectBarButtonClickEvent:)];
+    self.navigationItem.rightBarButtonItem = selectButton;
 }
 
 - (void)initPhotoCollectionView {
@@ -64,6 +71,7 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     photoCollectionView.dataSource = self;
     photoCollectionView.delegate = self;
     photoCollectionView.alwaysBounceHorizontal = NO;
+//    photoCollectionView.allowsMultipleSelection = YES;
     [self.view addSubview:photoCollectionView];
     self.photoCollectionView = photoCollectionView;
     
@@ -118,17 +126,30 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"点击了item:%ld", (long)indexPath.row);
-    
+    self.currentSelectedIndexPath = indexPath;
     MXImageModel *selectModel = [self.dataArray objectAtIndex:indexPath.row];
     //赋值model frame
     MXImagePickerCollectionViewCell *cell = (MXImagePickerCollectionViewCell *)[self.photoCollectionView cellForItemAtIndexPath:indexPath];
     //吧cell.frame转换到当前屏幕的位置而不是collectionView的位置.
     selectModel.cellRect = [self.view convertRect:cell.frame fromView:self.photoCollectionView];
     
-    MXImage3DPreviewViewController *previewVc = [[MXImage3DPreviewViewController alloc] init];
-    previewVc.model = selectModel;
-    self.navigationController.delegate = self.animatedTransiton;
-    [self.navigationController pushViewController:previewVc animated:YES];
+    //点击单图预览 以及多选模式
+    if (self.isSelectingPhotos) {
+        selectModel.selected = !selectModel.isSelected;
+        
+        if (selectModel.selected) {
+            [self.selectedPhotosArray addObject:selectModel];
+        } else {
+            [self.selectedPhotosArray removeObject:selectModel];
+        }
+        
+    } else {
+        
+        MXImage3DPreviewViewController *previewVc = [[MXImage3DPreviewViewController alloc] init];
+        previewVc.model = selectModel;
+        self.navigationController.delegate = self.animatedTransiton;
+        [self.navigationController pushViewController:previewVc animated:YES];
+    }
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -145,6 +166,7 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     [self.dataArray insertObject:objc atIndex:destinationIndexPath.item];
 }
 
+
 #pragma mark - getter & setter
 - (MXImagePreviewAnimationTransition *)animatedTransiton {
     if (_animatedTransiton == nil) {
@@ -154,7 +176,22 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
 }
 
 
+- (NSMutableArray *)selectedPhotosArray {
+    if (_selectedPhotosArray == nil) {
+        _selectedPhotosArray = [NSMutableArray array];
+    }
+    return _selectedPhotosArray;
+}
+
+- (void)setCurrentSelectedIndexPath:(NSIndexPath *)currentSelectedIndexPath {
+    _currentSelectedIndexPath = currentSelectedIndexPath;
+}
+
 #pragma mark - method
+
+- (void)conmmonConfig {
+    self.selectingPhotos = NO;
+}
 
 - (void)init3DTouch {
     // 如果开启了3D touch
@@ -175,7 +212,19 @@ static NSString * const kImagePickerCollectionViewCell = @"kImagePickerCollectio
     
 }
 
-
+#pragma mark - action
+- (void)handleSelectBarButtonClickEvent:(UIBarButtonItem *)sender {
+    self.selectingPhotos = !self.isSelectingPhotos;
+    if (self.isSelectingPhotos) {
+        sender.title = NSLocalizedString(@"取消", nil);
+    } else {
+        sender.title = NSLocalizedString(@"选择", nil);
+        //取消选择之后移除所有已选中的cell样式 清理model数据.
+        [self.dataArray enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            obj.selected = NO;
+        }];
+    }
+}
 
 - (void)handleLongPress:(UILongPressGestureRecognizer *)longPressGesture {
     //判断手势状态

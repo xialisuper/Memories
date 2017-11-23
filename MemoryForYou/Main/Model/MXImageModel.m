@@ -13,6 +13,7 @@
 - (instancetype)initWithPhAsset:(PHAsset *)asset {
     if (self = [super init]) {
         self.photoAsset = asset;
+        self.selected = NO;
     }
     return self;
 }
