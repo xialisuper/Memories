@@ -10,4 +10,13 @@
 
 @implementation MXImagePickerBottomCollectionViewCell
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.contentView.backgroundColor = [UIColor darkGrayColor];
+    }
+    return self;
+}
+
 @end

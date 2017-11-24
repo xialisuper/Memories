@@ -7,16 +7,19 @@
 //
 
 #import "MXImagePickerBottomView.h"
+#import "MXImagePickerBottomCollectionViewFlowLayout.h"
+#import "MXImagePickerBottomCollectionViewCell.h"
+
 #import <Masonry.h>
 
-static double const kShowAnimationDurationTimeInterval = 0.3;
-static double const kHideAnimationDurationTimeInterval = 0.15;
+static double const kShowAnimationDurationTimeInterval = 0.2;
+static double const kHideAnimationDurationTimeInterval = 0.1;
 static double const kViewHeight = 50;
+static NSString * const kMXImagePickerBottomCollectionViewCell = @"MXImagePickerBottomCollectionViewCell";
 
-@interface MXImagePickerBottomView ()
+@interface MXImagePickerBottomView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+
 @property(nonatomic, strong) UICollectionView *photoCollectionView;
-//判断当前view是否已经在显示中.
-@property(nonatomic, assign, getter=isShow) BOOL show;
 
 @end
 
@@ -27,26 +30,64 @@ static double const kViewHeight = 50;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor orangeColor];
-        self.show = NO;
         
+        [self initCollectionView];
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.photoCollectionView.frame = self.bounds;
 }
 
 #pragma mark - UI
 - (void)initCollectionView {
     
+    MXImagePickerBottomCollectionViewFlowLayout *layout = [[MXImagePickerBottomCollectionViewFlowLayout alloc] init];
     
-    UICollectionView *photoCollectionView = [UICollectionView alloc] initWithFrame:<#(CGRect)#> collectionViewLayout:<#(nonnull UICollectionViewLayout *)#>
+    UICollectionView *photoCollectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
+    self.photoCollectionView = photoCollectionView;
+    [self addSubview:photoCollectionView];
+    
+    photoCollectionView.backgroundColor = [UIColor redColor];
+    photoCollectionView.delegate = self;
+    photoCollectionView.dataSource = self;
+    photoCollectionView.showsHorizontalScrollIndicator = NO;
+    
+    [photoCollectionView registerClass:[MXImagePickerBottomCollectionViewCell class] forCellWithReuseIdentifier:kMXImagePickerBottomCollectionViewCell];
 }
+
+#pragma mark - UICollectionViewDataSource, UICollectionViewDelegate
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 15;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kMXImagePickerBottomCollectionViewCell forIndexPath:indexPath];
+    
+    
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
 
 
 #pragma mark - method
 
 - (void)showBottomViewFromView:(UIView *)view {
-    if (self.isShow) {
-        return;
-    }
+    //不再使用因为快速的弹出和隐藏 会在动画中途self.isShow未改变时return.
+    //造成双击 仍然弹出的问题
+//    if (self.isShow) {
+//        return;
+//    }
     
     [view addSubview:self];
     
@@ -56,21 +97,21 @@ static double const kViewHeight = 50;
         self.frame = CGRectMake(0, view.bounds.size.height - kViewHeight, view.bounds.size.width, kViewHeight);
         
     } completion:^(BOOL finished) {
-        self.show = YES;
+        
     }];
 }
 
 - (void)hideHideBottomViewFromView:(UIView *)view {
-    if (!self.isShow) {
-        return;
-    }
+//    if (!self.isShow) {
+//        return;
+//    }
     [UIView animateWithDuration:kHideAnimationDurationTimeInterval animations:^{
         
         self.frame = CGRectMake(0, view.bounds.size.height, view.bounds.size.width, kViewHeight);
         
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
-        self.show = NO;
+        
     }];
     
 }

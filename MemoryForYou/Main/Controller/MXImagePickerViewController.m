@@ -88,8 +88,6 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
     photoCollectionView.dataSource = self;
     photoCollectionView.delegate = self;
     photoCollectionView.alwaysBounceHorizontal = NO;
-//    photoCollectionView.allowsMultipleSelection = YES;
-    [self.view addSubview:photoCollectionView];
     self.photoCollectionView = photoCollectionView;
     
     [photoCollectionView registerClass:[MXImagePickerCollectionViewCell class] forCellWithReuseIdentifier:kImagePickerCollectionViewCell];
@@ -227,14 +225,23 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
                       ofObject:(id)object
                         change:(NSDictionary<NSString *,id> *)change
                        context:(void *)context {
+    
     if ([keyPath isEqualToString:kSelectedPhotosArray]) {
         //根据照片数组数量变化vc标题
         if (self.selectedPhotosArray.count) {
             self.title = [NSString stringWithFormat:NSLocalizedString(@"已选择%zd张照片", nil), self.selectedPhotosArray.count];
            
-            [self.bottomView showBottomViewFromView:self.view];
         } else {
             self.title = NSLocalizedString(@"选择项目", nil);
+        }
+        
+        //处理弹出bottomView
+        NSLog(@"%zd", [change[@"kind"] integerValue]);
+        //NSKeyValueChangeInsertion增加 NSKeyValueChangeRemoval减少
+        if ([change[@"kind"] integerValue] == NSKeyValueChangeInsertion && self.selectedPhotosArray.count == 1) {
+            [self.bottomView showBottomViewFromView:self.view];
+        }
+        if ([change[@"kind"] integerValue] == NSKeyValueChangeRemoval && self.selectedPhotosArray.count == 0) {
             [self.bottomView hideHideBottomViewFromView:self.view];
         }
     }
