@@ -154,9 +154,9 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
         selectModel.selected = !selectModel.isSelected;
         
         if (selectModel.selected) {
-            [[self mutableArrayValueForKey:kSelectedPhotosArray] addObject:selectModel];
+            [self selectPhotosArrayAddObject:selectModel];
         } else {
-            [[self mutableArrayValueForKey:kSelectedPhotosArray] removeObject:selectModel];
+            [self selectPhotosArrayRemoveObject:selectModel];
         }
         
     } else {
@@ -188,6 +188,7 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
 - (MXImagePickerBottomView *)bottomView {
     if (_bottomView == nil) {
         _bottomView = [[MXImagePickerBottomView alloc] init];
+        self.delegate = _bottomView;
     }
     return _bottomView;
 }
@@ -213,14 +214,6 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
 
 #pragma mark - method
 
-- (void)showAllSelectedPhotosBottomView {
-    
-}
-
-- (void)hideAllSelectedPhotosBottomView {
-    
-}
-
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary<NSString *,id> *)change
@@ -236,7 +229,6 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
         }
         
         //处理弹出bottomView
-        NSLog(@"%zd", [change[@"kind"] integerValue]);
         //NSKeyValueChangeInsertion增加 NSKeyValueChangeRemoval减少
         if ([change[@"kind"] integerValue] == NSKeyValueChangeInsertion && self.selectedPhotosArray.count == 1) {
             [self.bottomView showBottomViewFromView:self.view];
@@ -244,6 +236,8 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
         if ([change[@"kind"] integerValue] == NSKeyValueChangeRemoval && self.selectedPhotosArray.count == 0) {
             [self.bottomView hideHideBottomViewFromView:self.view];
         }
+        
+        
     }
 }
 
@@ -268,6 +262,22 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
     _longPressGesture.delegate = self;
     [self.photoCollectionView addGestureRecognizer:_longPressGesture];
     
+}
+
+- (void)selectPhotosArrayAddObject:(MXImageModel *)model {
+    
+    [[self mutableArrayValueForKey:kSelectedPhotosArray] addObject:model];
+    if ([self.delegate respondsToSelector:@selector(imagePickerViewControllerAddModel:)]) {
+        [self.delegate imagePickerViewControllerAddModel:model];
+    }
+}
+
+- (void)selectPhotosArrayRemoveObject:(MXImageModel *)model {
+    
+    [[self mutableArrayValueForKey:kSelectedPhotosArray] removeObject:model];
+    if ([self.delegate respondsToSelector:@selector(imagePickerViewControllerRemoveModel:)]) {
+        [self.delegate imagePickerViewControllerRemoveModel:model];
+    }
 }
 
 #pragma mark - action

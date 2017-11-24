@@ -9,6 +9,7 @@
 #import "MXImagePickerBottomView.h"
 #import "MXImagePickerBottomCollectionViewFlowLayout.h"
 #import "MXImagePickerBottomCollectionViewCell.h"
+#import "MXImagePickerViewController.h"
 
 #import <Masonry.h>
 
@@ -17,9 +18,11 @@ static double const kHideAnimationDurationTimeInterval = 0.1;
 static double const kViewHeight = 50;
 static NSString * const kMXImagePickerBottomCollectionViewCell = @"MXImagePickerBottomCollectionViewCell";
 
-@interface MXImagePickerBottomView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface MXImagePickerBottomView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, MXImagePickerViewControllerDelegate>
 
 @property(nonatomic, strong) UICollectionView *photoCollectionView;
+//保存被选中数据模型数组
+@property(nonatomic, strong) NSMutableArray<MXImageModel *> *selectedPhotosArray;
 
 @end
 
@@ -61,7 +64,7 @@ static NSString * const kMXImagePickerBottomCollectionViewCell = @"MXImagePicker
 #pragma mark - UICollectionViewDataSource, UICollectionViewDelegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 15;
+    return self.selectedPhotosArray.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -78,6 +81,28 @@ static NSString * const kMXImagePickerBottomCollectionViewCell = @"MXImagePicker
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
+#pragma mark - MXImagePickerViewControllerDelegate
+
+- (void)imagePickerViewControllerAddModel:(MXImageModel *)model {
+    
+    //不这么写会有Bug 只是用insert方法
+    [self.selectedPhotosArray addObject:model];
+    if (self.selectedPhotosArray.count == 1 || [self.photoCollectionView numberOfItemsInSection:0] == self.selectedPhotosArray.count) {
+        [self.photoCollectionView reloadData];
+    } else {
+        [self.photoCollectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.selectedPhotosArray.count - 1 inSection:0]]];
+    }
+}
+
+- (void)imagePickerViewControllerRemoveModel:(MXImageModel *)model {
+    [self.selectedPhotosArray enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj == model) {
+            [self.selectedPhotosArray removeObject:model];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:0];
+            [self.photoCollectionView deleteItemsAtIndexPaths:@[indexPath]];
+        }
+    }];
+}
 
 
 #pragma mark - method
@@ -115,5 +140,15 @@ static NSString * const kMXImagePickerBottomCollectionViewCell = @"MXImagePicker
     }];
     
 }
+
+#pragma mark - getter & setter
+- (NSMutableArray *)selectedPhotosArray {
+    if (_selectedPhotosArray == nil) {
+        _selectedPhotosArray = [NSMutableArray array];
+    }
+    return _selectedPhotosArray;
+}
+
+
 
 @end
