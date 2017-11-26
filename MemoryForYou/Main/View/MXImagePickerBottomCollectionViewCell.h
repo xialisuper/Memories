@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MXImageModel.h"
 @interface MXImagePickerBottomCollectionViewCell : UICollectionViewCell
+@property(nonatomic, strong) MXImageModel *model;
 
 @end

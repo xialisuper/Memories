@@ -33,6 +33,11 @@
  */
 - (void)imagePickerViewControllerRemoveModel:(MXImageModel *)model;
 
+/**
+ 移除了所有选中图片
+ */
+- (void)imagePickerViewControllerRemoveAllObjects;
+
 @end
 
 @interface MXImagePickerViewController : MXBaseViewController

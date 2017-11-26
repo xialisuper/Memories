@@ -293,6 +293,9 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
             obj.selected = NO;
         }];
         [[self mutableArrayValueForKeyPath:kSelectedPhotosArray] removeAllObjects];
+        if ([self.delegate respondsToSelector:@selector(imagePickerViewControllerRemoveAllObjects)]) {
+            [self.delegate imagePickerViewControllerRemoveAllObjects];
+        }
         self.title = NSLocalizedString(@"照片", nil);
     }
 }

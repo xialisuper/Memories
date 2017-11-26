@@ -11,4 +11,6 @@
 #define MXNavigationTransitionDuration 0.6f
 #define MXSafeAreaTopHeight ([UIScreen mainScreen].bounds.size.height == 812.0 ? 88 : 64)
 
+#define MXToolBarColor [UIColor lightGrayColor]
+
 
