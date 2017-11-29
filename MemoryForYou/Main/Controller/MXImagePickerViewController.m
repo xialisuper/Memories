@@ -47,10 +47,8 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
     [self initNavBar];
     [self initPhotoCollectionView];
     [self initGestureRecognizers];
-    
 }
 
-//
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.navigationController.delegate = nil;
