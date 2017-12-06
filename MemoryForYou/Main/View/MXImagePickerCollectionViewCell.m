@@ -11,8 +11,12 @@
 #import "MXImageModel.h"
 #import <ReactiveCocoa.h>
 
+#define selectedColor COLOR_W(255, 0.5)
+#define deselectedColor [UIColor clearColor]
+
 @interface MXImagePickerCollectionViewCell ()
-@property(nonatomic, strong) UIView *coverWhiteView;
+@property(nonatomic, strong) UIView *coverView;
+
 @end
 
 @implementation MXImagePickerCollectionViewCell
@@ -29,6 +33,13 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
     self.imageView = imageView;
     [self.contentView addSubview:imageView];
+    
+    //照片上的蒙版 选中模式为半透明 非选中模式为透明
+    UIView *coverView = [[UIView alloc] initWithFrame:self.contentView.bounds];
+    self.coverView = coverView;
+    [imageView addSubview:coverView];
+    coverView.backgroundColor = deselectedColor;
+    
 }
 
 - (void)setImageModel:(MXImageModel *)imageModel {
@@ -56,12 +67,9 @@
 - (void)updateSelectedUI:(BOOL)selected {
     //显示被选中的白色半透明蒙版
     if (selected) {
-        UIView *coverWhiteView = [[UIView alloc] initWithFrame:self.contentView.bounds];
-        self.coverWhiteView = coverWhiteView;
-        [self.contentView addSubview:coverWhiteView];
-        coverWhiteView.backgroundColor = COLOR_W(255, 0.5);
+        self.coverView.backgroundColor = selectedColor;
     } else {
-        [self.coverWhiteView removeFromSuperview];
+        self.coverView.backgroundColor = deselectedColor;
     }
 }
 
