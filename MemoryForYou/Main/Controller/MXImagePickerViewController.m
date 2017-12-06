@@ -157,6 +157,8 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
             [self selectPhotosArrayRemoveObject:selectModel];
         }
         
+        [collectionView reloadItemsAtIndexPaths:@[indexPath]];
+        
     } else {
         
         MXImage3DPreviewViewController *previewVc = [[MXImage3DPreviewViewController alloc] init];
@@ -291,6 +293,8 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
             obj.selected = NO;
         }];
         [[self mutableArrayValueForKeyPath:kSelectedPhotosArray] removeAllObjects];
+        [self.photoCollectionView reloadData];
+        
         if ([self.delegate respondsToSelector:@selector(imagePickerViewControllerRemoveAllObjects)]) {
             [self.delegate imagePickerViewControllerRemoveAllObjects];
         }

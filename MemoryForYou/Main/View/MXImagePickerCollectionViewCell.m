@@ -25,6 +25,14 @@
     if (self = [super initWithFrame:frame]) {
         [self initImageView];
         self.contentView.backgroundColor = [UIColor darkGrayColor];
+        //监听数据model的属性. 变化UI.
+//        @WeakObj(self);
+//        RACSignal *signal = [RACObserve(self.imageModel, selected) deliverOnMainThread];
+//        [signal subscribeNext:^(NSNumber *selected){
+//            
+//            @StrongObj(self);
+//            [self updateSelectedUI:[selected intValue]];
+//        }];
     }
     return self;
 }
@@ -49,14 +57,6 @@
     PHAsset *asset = imageModel.photoAsset;
 
     @WeakObj(self);
-    
-    //监听数据model的属性. 变化UI.
-    RACSignal *signal = [RACObserve(imageModel, selected) deliverOnMainThread];
-    [signal subscribeNext:^(NSNumber *selected){
-        
-        @StrongObj(self);
-        [self updateSelectedUI:[selected intValue]];
-    }];
     
     [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:asset WithSize:self.contentView.bounds.size synchronous:(BOOL)NO block:^(UIImage *image, NSDictionary *info) {
         @StrongObj(self);
