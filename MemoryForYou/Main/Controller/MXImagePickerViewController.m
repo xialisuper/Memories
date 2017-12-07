@@ -7,6 +7,7 @@
 //
 
 #import "MXImagePickerViewController.h"
+#import "MXAudioPlayViewController.h"
 #import "MXPhotoPickerCollectionViewFlowLayout.h"
 #import "MXImagePickerCollectionViewCell.h"
 #import "MXImage3DPreviewViewController.h"
@@ -73,6 +74,9 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
     //右侧按钮变化
     UIBarButtonItem *selectButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"选择", nil) style:UIBarButtonItemStyleDone target:self action:@selector(handleSelectBarButtonClickEvent:)];
     self.navigationItem.rightBarButtonItem = selectButton;
+    
+    UIBarButtonItem *commitButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"", nil) style:UIBarButtonItemStyleDone target:self action:@selector(handleCommitBarButtonClickEvent:)];
+    self.navigationItem.leftBarButtonItem = commitButton;
 }
 
 - (void)initPhotoCollectionView {
@@ -281,12 +285,26 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
 }
 
 #pragma mark - action
+
+- (void)handleCommitBarButtonClickEvent:(UIBarButtonItem *)sender {
+    NSLog(@"确认");
+    MXAudioPlayViewController *audioVc = [[MXAudioPlayViewController alloc] init];
+    [self.navigationController pushViewController:audioVc animated:YES];
+}
+
 - (void)handleSelectBarButtonClickEvent:(UIBarButtonItem *)sender {
     self.selectingPhotos = !self.isSelectingPhotos;
     if (self.isSelectingPhotos) {
+        UIBarButtonItem *commitButton = self.navigationItem.leftBarButtonItem;
+        //左侧按钮变化
+        commitButton.title = NSLocalizedString(@"确认", nil);
         sender.title = NSLocalizedString(@"取消", nil);
         self.title = NSLocalizedString(@"选择项目", nil);
     } else {
+        UIBarButtonItem *commitButton = self.navigationItem.leftBarButtonItem;
+        //左侧按钮变化
+        commitButton.title = NSLocalizedString(@"", nil);
+        
         sender.title = NSLocalizedString(@"选择", nil);
         //取消选择之后移除所有已选中的cell样式 清理model数据.
         [self.dataArray enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

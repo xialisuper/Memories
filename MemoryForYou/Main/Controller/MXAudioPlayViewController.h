@@ -7,7 +7,9 @@
 //
 
 #import "MXBaseViewController.h"
-
+@class MXImageModel;
 @interface MXAudioPlayViewController : MXBaseViewController
+
+@property(nonatomic, strong) NSArray <MXImageModel *>*photoesArray;
 
 @end
