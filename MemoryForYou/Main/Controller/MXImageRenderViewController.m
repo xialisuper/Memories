@@ -46,6 +46,7 @@ static NSUInteger const kPhotoTransitonFrameCount = kFPS / 2;
     [EAGLContext setCurrentContext:self.eaglContext];
     
     self.currentTime = 0;
+    self.paused = YES;
 }
 
 
@@ -87,6 +88,10 @@ static NSUInteger const kPhotoTransitonFrameCount = kFPS / 2;
 //    });
 
     glClear(GL_COLOR_BUFFER_BIT);
+    if (self.currentImage == nil) {
+        self.paused = YES;
+        
+    }
     [self.ciContext drawImage:self.currentImage
                        inRect:CGRectMake(0, 0, MXScreenWidth * ScreenScale, MXScreenHeight * ScreenScale)
                      fromRect:CGRectMake(0, 0, MXScreenWidth * ScreenScale, MXScreenHeight * ScreenScale)];
@@ -95,11 +100,23 @@ static NSUInteger const kPhotoTransitonFrameCount = kFPS / 2;
 #pragma mark - getter & setter
 - (void)setPhotoArray:(NSArray<MXImageModel *> *)photoArray {
     _photoArray = photoArray;
-    self.videoModel = [[MXVideoModel alloc] initNormalModelWithImages:photoArray];
+//    self.videoModel = [[MXVideoModel alloc] initNormalModelWithImages:photoArray];
+    [[MXVideoModel alloc] loadDataWithImages:photoArray withBlock:^(MXVideoModel *model) {
+        self.videoModel = model;
+        
+        self.paused = NO;
+    }];
     
-    NSLog(@"%@", self.videoModel.modelArray);
 }
 
+- (void)setPaused:(BOOL)paused {
+    [super setPaused:paused];
+    if (paused) {
+        NSLog(@"渲染暂停");
+    } else {
+        NSLog(@"开始渲染");
+    }
+}
 
 
 

@@ -24,6 +24,8 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
 - (instancetype)initNormalModelWithImages:(NSArray<MXImageModel *> *)images {
     if (self = [super init]) {
         __block NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:images.count];
+        
+        
         [images enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             MXTransitonFilterModel *model = [[MXTransitonFilterModel alloc] initWithImageModel:obj
                                                                                           time:2.0
@@ -52,6 +54,9 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
         }
         currentFilterStartTime += obj.duration;
 
+        if (idx == self.modelArray.count - 1 && currentFilterStartTime < time) {
+            tempImage = nil;
+        }
     }];
     
     
@@ -90,7 +95,24 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
     }];
 }
 
+- (void)loadDataWithImages:(NSArray<MXImageModel *> *)images withBlock:(void (^)(MXVideoModel *model))completion {
+    
+    __block NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:images.count];
+    
+    
+    [images enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        MXTransitonFilterModel *model = [[MXTransitonFilterModel alloc] initWithImageModel:obj
+                                                                                      time:2.0
+                                                                                  distance:10
+                                                                                     scale:1.1
+                                                                                 direction:CGPointMake(-10, 10)];
+        [tempArray addObject:model];
+    }];
+    self.modelArray = tempArray;
 
+    completion(self);
+
+}
 
 
 @end

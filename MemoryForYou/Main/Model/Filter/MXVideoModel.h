@@ -15,7 +15,7 @@
 @property(nonatomic, strong) NSMutableArray<MXBaseFilterModel *> *modelArray;
 
 - (instancetype)initNormalModelWithImages:(NSArray<MXImageModel *> *)images;
-
+- (void)loadDataWithImages:(NSArray<MXImageModel *> *)images withBlock:(void(^)(MXVideoModel *model))completion;
 
 /**
  总时长的某个坐标获取当前时刻的滤镜progress
