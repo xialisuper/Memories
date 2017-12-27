@@ -52,7 +52,9 @@
 - (void)setModel:(MXImageModel *)model {
     _model = model;
     
-    [[MXPhotoUtil sharedInstance] photoUtilFetchOriginImageWith:model.photoAsset synchronous:YES block:^(UIImage *image) {
+    [[MXPhotoUtil sharedInstance] photoUtilFetchOriginImageWith:model.photoAsset
+                                                    synchronous:YES
+                                                          block:^(UIImage *image) {
         self.imageView.image = image;
     }];
 }

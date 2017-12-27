@@ -13,6 +13,7 @@
 #import "MXImage3DPreviewViewController.h"
 #import "MXPhotoUtil.h"
 #import "MXImagePreviewAnimationTransition.h"
+#import "MXImageRenderViewController.h"
 #import "MXImageModel+MXCellFrame.h"
 #import "MXImagePickerBottomView.h"
 #import <Masonry.h>
@@ -287,9 +288,12 @@ static NSString * const kSelectedPhotosArray = @"selectedPhotosArray";
 #pragma mark - action
 
 - (void)handleCommitBarButtonClickEvent:(UIBarButtonItem *)sender {
-    NSLog(@"确认");
-    MXAudioPlayViewController *audioVc = [[MXAudioPlayViewController alloc] init];
-    [self.navigationController pushViewController:audioVc animated:YES];
+    NSLog(@"%@", self.selectedPhotosArray);
+    
+//    MXAudioPlayViewController *audioVc = [[MXAudioPlayViewController alloc] init];
+    MXImageRenderViewController *renderVc = [[UIStoryboard storyboardWithName:@"MXImageRenderViewController" bundle:nil] instantiateInitialViewController];
+    renderVc.photoArray = self.selectedPhotosArray;
+    [self.navigationController pushViewController:renderVc animated:YES];
 }
 
 - (void)handleSelectBarButtonClickEvent:(UIBarButtonItem *)sender {

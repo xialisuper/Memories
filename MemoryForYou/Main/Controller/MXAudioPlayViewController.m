@@ -39,14 +39,43 @@
 
 #pragma mark - method
 
-- (void)showVideo {
-//    if (!self.photoesArray.count) {
-//        return;
-//    }
+- (void)testPlayVideo {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"rzjt" ofType:@"MP4"];
     NSURL *testUrl = [NSURL fileURLWithPath:filePath];
-    
+
     [self.avplayerView playWith:testUrl];
+    
+}
+
+- (void)showVideo {
+    if (!self.photoesArray.count) {
+        NSLog(@"audioPlayerVc no pohotoArray ");
+        return;
+    }
+    
+    [self handlePhotoToVideoWithArray:self.photoesArray withBlock:^(BOOL success) {
+        if (!success) {
+            NSLog(@"error");
+        } else {
+            NSLog(@"success");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // 更新界面
+                NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:
+                                      [NSString stringWithFormat:@"temp.mp4"]];
+                NSURL *videoURL = [NSURL fileURLWithPath:tempPath];
+                [self.avplayerView playWith:videoURL];
+            });
+        }
+    }];
+}
+
+
+
+- (void)handlePhotoToVideoWithArray:(NSArray <MXImageModel *>*)photoArray withBlock:(void (^)(BOOL success))block {
+    
+    [[MXVideoUtil sharedInstance] writeImageAsMovie:photoArray WithBlock:^(BOOL success) {
+        block(success);
+    }];
 }
 
 #pragma mark - getter & setter

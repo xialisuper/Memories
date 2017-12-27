@@ -131,7 +131,8 @@
     // 在 PHImageManager 中，targetSize 等 size 都是使用 px 作为单位，因此需要对targetSize 中对传入的 Size 进行处理，宽高各自乘以 ScreenScale，从而得到正确的图片
     [self.manager requestImageForAsset:asset
                             targetSize:CGSizeMake(size.width * ScreenScale, size.height * ScreenScale)
-                           contentMode:PHImageContentModeAspectFill options:phImageRequestOptions
+                           contentMode:PHImageContentModeAspectFill
+                               options:phImageRequestOptions
                          resultHandler:^(UIImage *result, NSDictionary *info) {
                              handler(result, info);
                          }];

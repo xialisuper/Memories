@@ -29,6 +29,16 @@
 		5E9FF1881F79636E00283FBD /* MXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1871F79636E00283FBD /* MXAppDelegate.m */; };
 		5E9FF1901F79636E00283FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FF18F1F79636E00283FBD /* Assets.xcassets */; };
 		5E9FF1961F79636E00283FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FF1951F79636E00283FBD /* main.m */; };
+		5EA606D11FED316500F81113 /* MXFilterUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA606D01FED316500F81113 /* MXFilterUtil.m */; };
+		5EA606D31FED33DA00F81113 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA606D21FED33DA00F81113 /* GLKit.framework */; };
+		5EA606D51FED33EC00F81113 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA606D41FED33EC00F81113 /* OpenGLES.framework */; };
+		5EA606D71FED340800F81113 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA606D61FED340800F81113 /* CoreImage.framework */; };
+		5EA606D91FED341000F81113 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA606D81FED341000F81113 /* CoreGraphics.framework */; };
+		5EA606DC1FED345C00F81113 /* MXImageRenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA606DB1FED345C00F81113 /* MXImageRenderView.m */; };
+		5EA606DF1FED395000F81113 /* MXImageRenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA606DE1FED395000F81113 /* MXImageRenderViewController.m */; };
+		5EA606E81FF1136C00F81113 /* MXBaseFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA606E71FF1136C00F81113 /* MXBaseFilterModel.m */; };
+		5EA606EB1FF1E14100F81113 /* MXTransitonFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA606EA1FF1E14100F81113 /* MXTransitonFilterModel.m */; };
+		5EA606F01FF1EF3900F81113 /* MXVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA606EF1FF1EF3900F81113 /* MXVideoModel.m */; };
 		5EAFA9581FD7965800F9B9F3 /* MXVideoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAFA9571FD7965800F9B9F3 /* MXVideoUtil.m */; };
 		5EAFA9671FD90D4600F9B9F3 /* LLAVPlayerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAFA95E1FD90D4600F9B9F3 /* LLAVPlayerItem.m */; };
 		5EAFA9681FD90D4600F9B9F3 /* LLAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAFA95F1FD90D4600F9B9F3 /* LLAVPlayerView.m */; };
@@ -36,6 +46,7 @@
 		5EBAF2FD1F7F6D5300C627CA /* MXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAF2FC1F7F6D5300C627CA /* MXBaseViewController.m */; };
 		5EBAF3001F7F6D8A00C627CA /* MXAudioPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAF2FF1F7F6D8A00C627CA /* MXAudioPlayViewController.m */; };
 		5EBAF3061F7F72B100C627CA /* MXPhotoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBAF3051F7F72B100C627CA /* MXPhotoUtil.m */; };
+		5ED393A21FF3407500882FBA /* MXImageRenderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED393A11FF3407500882FBA /* MXImageRenderViewController.storyboard */; };
 		5EFB253D1FAFF128006A50AA /* MXImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB253C1FAFF128006A50AA /* MXImageModel.m */; };
 		B150D64DE5244FA58902E52D /* libPods-MemoryForYou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C87D5F742341887FED58B90E /* libPods-MemoryForYou.a */; };
 /* End PBXBuildFile section */
@@ -88,6 +99,22 @@
 		5E9FF18F1F79636E00283FBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E9FF1941F79636E00283FBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E9FF1951F79636E00283FBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5EA606CF1FED316500F81113 /* MXFilterUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXFilterUtil.h; sourceTree = "<group>"; };
+		5EA606D01FED316500F81113 /* MXFilterUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXFilterUtil.m; sourceTree = "<group>"; };
+		5EA606D21FED33DA00F81113 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		5EA606D41FED33EC00F81113 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		5EA606D61FED340800F81113 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		5EA606D81FED341000F81113 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5EA606DA1FED345C00F81113 /* MXImageRenderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImageRenderView.h; sourceTree = "<group>"; };
+		5EA606DB1FED345C00F81113 /* MXImageRenderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImageRenderView.m; sourceTree = "<group>"; };
+		5EA606DD1FED395000F81113 /* MXImageRenderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImageRenderViewController.h; sourceTree = "<group>"; };
+		5EA606DE1FED395000F81113 /* MXImageRenderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImageRenderViewController.m; sourceTree = "<group>"; };
+		5EA606E61FF1136C00F81113 /* MXBaseFilterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXBaseFilterModel.h; sourceTree = "<group>"; };
+		5EA606E71FF1136C00F81113 /* MXBaseFilterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXBaseFilterModel.m; sourceTree = "<group>"; };
+		5EA606E91FF1E14100F81113 /* MXTransitonFilterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXTransitonFilterModel.h; sourceTree = "<group>"; };
+		5EA606EA1FF1E14100F81113 /* MXTransitonFilterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXTransitonFilterModel.m; sourceTree = "<group>"; };
+		5EA606EE1FF1EF3900F81113 /* MXVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXVideoModel.h; sourceTree = "<group>"; };
+		5EA606EF1FF1EF3900F81113 /* MXVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXVideoModel.m; sourceTree = "<group>"; };
 		5EAFA9561FD7965800F9B9F3 /* MXVideoUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXVideoUtil.h; sourceTree = "<group>"; };
 		5EAFA9571FD7965800F9B9F3 /* MXVideoUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXVideoUtil.m; sourceTree = "<group>"; };
 		5EAFA95E1FD90D4600F9B9F3 /* LLAVPlayerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLAVPlayerItem.m; sourceTree = "<group>"; };
@@ -104,6 +131,7 @@
 		5EBAF3051F7F72B100C627CA /* MXPhotoUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXPhotoUtil.m; sourceTree = "<group>"; };
 		5EC0236D1F9661B20094D65F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5EC0236E1F9661B20094D65F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5ED393A11FF3407500882FBA /* MXImageRenderViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MXImageRenderViewController.storyboard; sourceTree = "<group>"; };
 		5EFB253B1FAFF128006A50AA /* MXImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXImageModel.h; sourceTree = "<group>"; };
 		5EFB253C1FAFF128006A50AA /* MXImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXImageModel.m; sourceTree = "<group>"; };
 		5EFB25401FAFF469006A50AA /* MXPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXPrefixHeader.pch; sourceTree = "<group>"; };
@@ -116,6 +144,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA606D91FED341000F81113 /* CoreGraphics.framework in Frameworks */,
+				5EA606D71FED340800F81113 /* CoreImage.framework in Frameworks */,
+				5EA606D51FED33EC00F81113 /* OpenGLES.framework in Frameworks */,
+				5EA606D31FED33DA00F81113 /* GLKit.framework in Frameworks */,
 				B150D64DE5244FA58902E52D /* libPods-MemoryForYou.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +166,9 @@
 				5E6C42F31FB2B31A00C99D39 /* MXImagePreviewViewController.m */,
 				5E6C42F51FB3F81000C99D39 /* MXImage3DPreviewViewController.h */,
 				5E6C42F61FB3F81000C99D39 /* MXImage3DPreviewViewController.m */,
+				5EA606DD1FED395000F81113 /* MXImageRenderViewController.h */,
+				5EA606DE1FED395000F81113 /* MXImageRenderViewController.m */,
+				5ED393A11FF3407500882FBA /* MXImageRenderViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -151,6 +186,8 @@
 				5E83E9F61FC6F452009A5C5C /* MXImagePickerBottomCollectionViewFlowLayout.m */,
 				5E83E9F81FC6F486009A5C5C /* MXImagePickerBottomCollectionViewCell.h */,
 				5E83E9F91FC6F486009A5C5C /* MXImagePickerBottomCollectionViewCell.m */,
+				5EA606DA1FED345C00F81113 /* MXImageRenderView.h */,
+				5EA606DB1FED345C00F81113 /* MXImageRenderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +195,7 @@
 		5E371E911FAAFFEC009D8026 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5EA606ED1FF1E5D600F81113 /* Filter */,
 				5EFB253B1FAFF128006A50AA /* MXImageModel.h */,
 				5EFB253C1FAFF128006A50AA /* MXImageModel.m */,
 				5E83E9F11FBC2178009A5C5C /* MXImageModel+MXCellFrame.h */,
@@ -255,6 +293,19 @@
 			path = MemoryForYou;
 			sourceTree = "<group>";
 		};
+		5EA606ED1FF1E5D600F81113 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				5EA606E61FF1136C00F81113 /* MXBaseFilterModel.h */,
+				5EA606E71FF1136C00F81113 /* MXBaseFilterModel.m */,
+				5EA606E91FF1E14100F81113 /* MXTransitonFilterModel.h */,
+				5EA606EA1FF1E14100F81113 /* MXTransitonFilterModel.m */,
+				5EA606EE1FF1EF3900F81113 /* MXVideoModel.h */,
+				5EA606EF1FF1EF3900F81113 /* MXVideoModel.m */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		5EAFA95C1FD90D4600F9B9F3 /* LLAVPlayerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +328,8 @@
 				5EBAF3051F7F72B100C627CA /* MXPhotoUtil.m */,
 				5EAFA9561FD7965800F9B9F3 /* MXVideoUtil.h */,
 				5EAFA9571FD7965800F9B9F3 /* MXVideoUtil.m */,
+				5EA606CF1FED316500F81113 /* MXFilterUtil.h */,
+				5EA606D01FED316500F81113 /* MXFilterUtil.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -319,6 +372,10 @@
 		6B57A7CA58A42707929086DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EA606D81FED341000F81113 /* CoreGraphics.framework */,
+				5EA606D61FED340800F81113 /* CoreImage.framework */,
+				5EA606D41FED33EC00F81113 /* OpenGLES.framework */,
+				5EA606D21FED33DA00F81113 /* GLKit.framework */,
 				C87D5F742341887FED58B90E /* libPods-MemoryForYou.a */,
 			);
 			name = Frameworks;
@@ -395,6 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED393A21FF3407500882FBA /* MXImageRenderViewController.storyboard in Resources */,
 				5E9FF1901F79636E00283FBD /* Assets.xcassets in Resources */,
 				5E59BA201FD90FD60090CB12 /* rzjt.MP4 in Resources */,
 			);
@@ -465,11 +523,16 @@
 			files = (
 				5E83E9D21FBAD05A009A5C5C /* MXBaseNavAnimationTransition.m in Sources */,
 				5E83E9EA1FBBEB47009A5C5C /* MXImagePreviewPercentDrivenInteractiveTransition.m in Sources */,
+				5EA606F01FF1EF3900F81113 /* MXVideoModel.m in Sources */,
+				5EA606EB1FF1E14100F81113 /* MXTransitonFilterModel.m in Sources */,
 				5E83E9D81FBBD4AA009A5C5C /* MXImagePreviewPopAnimator.m in Sources */,
 				5E83E9F71FC6F452009A5C5C /* MXImagePickerBottomCollectionViewFlowLayout.m in Sources */,
+				5EA606DF1FED395000F81113 /* MXImageRenderViewController.m in Sources */,
+				5EA606E81FF1136C00F81113 /* MXBaseFilterModel.m in Sources */,
 				5EAFA9681FD90D4600F9B9F3 /* LLAVPlayerView.m in Sources */,
 				5E83E9FA1FC6F486009A5C5C /* MXImagePickerBottomCollectionViewCell.m in Sources */,
 				5E83E9ED1FBBEF1E009A5C5C /* MXBaseNavAnimator.m in Sources */,
+				5EA606D11FED316500F81113 /* MXFilterUtil.m in Sources */,
 				5E6C42F71FB3F81000C99D39 /* MXImage3DPreviewViewController.m in Sources */,
 				5EFB253D1FAFF128006A50AA /* MXImageModel.m in Sources */,
 				5E9FF1961F79636E00283FBD /* main.m in Sources */,
@@ -491,6 +554,7 @@
 				5EAFA9671FD90D4600F9B9F3 /* LLAVPlayerItem.m in Sources */,
 				5E371E871FAABBBB009D8026 /* MXBaseNavigationController.m in Sources */,
 				5EAFA96B1FD90D4600F9B9F3 /* UIImage+LLAVPlayer.m in Sources */,
+				5EA606DC1FED345C00F81113 /* MXImageRenderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,7 +674,7 @@
 				DEVELOPMENT_TEAM = JNWXFM5T8S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MemoryForYou/Supporting Files/MXPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/MemoryForYou/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Memory.MemoryForYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -627,7 +691,7 @@
 				DEVELOPMENT_TEAM = JNWXFM5T8S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MemoryForYou/Supporting Files/MXPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/MemoryForYou/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Memory.MemoryForYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
