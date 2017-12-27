@@ -15,9 +15,12 @@
  视频模型的类别 例如普通模式 以后可能会增加拓展例如搭配不同的动画类型,例如渐变
 
  - MXVideoModelStyleNormal: 普通模式 只有放大
+ - MXVideoModelStyleDissolve: 渐变
+
  */
 typedef NS_ENUM(NSUInteger, MXVideoModelStyle) {
     MXVideoModelStyleNormal,
+    MXVideoModelStyleDissolve,
 };
 
 

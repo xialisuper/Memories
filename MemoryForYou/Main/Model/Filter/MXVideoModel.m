@@ -140,7 +140,6 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
     }
     
     self.modelArray = tempArray;
-    
     completion(self);
     
 }
