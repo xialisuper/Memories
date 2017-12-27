@@ -114,5 +114,36 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
 
 }
 
+- (void)loadDataWithImages:(NSArray<MXImageModel *> *)images
+                     style:(MXVideoModelStyle)style
+           completionBlock:(void (^)(MXVideoModel *))completion {
+    
+     __block NSMutableArray *tempArray = [NSMutableArray array];
+    
+    switch (style) {
+        case MXVideoModelStyleNormal: {
+            [images enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                MXTransitonFilterModel *model = [[MXTransitonFilterModel alloc] initWithImageModel:obj
+                                                                                              time:2.0
+                                                                                          distance:10
+                                                                                             scale:1.1
+                                                                                         direction:CGPointMake(-10, 10)];
+                [tempArray addObject:model];
+            }];
+            
+            break;
+        }
+            
+            
+        default:
+            break;
+    }
+    
+    self.modelArray = tempArray;
+    
+    completion(self);
+    
+}
+
 
 @end

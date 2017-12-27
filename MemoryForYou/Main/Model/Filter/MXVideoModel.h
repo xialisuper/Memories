@@ -10,12 +10,24 @@
 #import <UIKit/UIKit.h>
 
 @class MXBaseFilterModel, MXImageModel;
+
+/**
+ 视频模型的类别 例如普通模式 以后可能会增加拓展例如搭配不同的动画类型,例如渐变
+
+ - MXVideoModelStyleNormal: 普通模式 只有放大
+ */
+typedef NS_ENUM(NSUInteger, MXVideoModelStyle) {
+    MXVideoModelStyleNormal,
+};
+
+
 @interface MXVideoModel : NSObject
 
 @property(nonatomic, strong) NSMutableArray<MXBaseFilterModel *> *modelArray;
 
 - (instancetype)initNormalModelWithImages:(NSArray<MXImageModel *> *)images;
 - (void)loadDataWithImages:(NSArray<MXImageModel *> *)images withBlock:(void(^)(MXVideoModel *model))completion;
+- (void)loadDataWithImages:(NSArray<MXImageModel *> *)images style:(MXVideoModelStyle)style completionBlock:(void(^)(MXVideoModel *model))completion;
 
 /**
  总时长的某个坐标获取当前时刻的滤镜progress
