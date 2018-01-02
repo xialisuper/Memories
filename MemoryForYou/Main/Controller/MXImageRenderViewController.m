@@ -78,7 +78,7 @@ static NSInteger const kFPS = 60;
 - (void)setPhotoArray:(NSArray<MXImageModel *> *)photoArray {
     _photoArray = photoArray;
     
-    [[MXVideoModel alloc] loadDataWithImages:photoArray style:MXVideoModelStyleNormal completionBlock:^(MXVideoModel *model) {
+    [[MXVideoModel alloc] loadDataWithImages:photoArray style:MXVideoModelStyleDissolve completionBlock:^(MXVideoModel *model) {
         self.videoModel = model;
         
         self.paused = NO;

@@ -20,4 +20,7 @@
 @property(nonatomic, assign) NSTimeInterval duration;
 
 
+//交给子类重写
+- (CIImage *)imageWithProgress:(CGFloat)progress;
+
 @end

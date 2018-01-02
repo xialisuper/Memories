@@ -17,6 +17,7 @@
 
 //用来标记当前数据模型是否为选中状态. 与系统cell选中区分开来.
 @property(nonatomic, assign, getter=isSelected) BOOL selected;
+@property(nonatomic, strong, readonly) UIImage *image;
 
 - (instancetype)initWithPhAsset:(PHAsset *)asset;
 

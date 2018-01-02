@@ -7,6 +7,7 @@
 //
 
 #import "MXBaseFilterModel.h"
+#import <CoreImage/CoreImage.h>
 
 typedef NS_ENUM(NSUInteger, MXVisualEffectFilterType) {
     MXVisualEffectFilterTypeDissolve,

@@ -9,8 +9,11 @@
 #import "MXVideoModel.h"
 #import "MXBaseFilterModel.h"
 #import "MXTransitonFilterModel.h"
+#import "MXVisualEffectFilterModel.h"
+#import "MXPhotoUtil.h"
 
-static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
+static NSTimeInterval const kTransitionDurationTimeInterval = 1.5;
+static NSTimeInterval const kDissolveDurationTimeInterval = 0.2;
 
 @interface MXVideoModel ()
 //总时长
@@ -28,7 +31,7 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
         
         [images enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             MXTransitonFilterModel *model = [[MXTransitonFilterModel alloc] initWithImageModel:obj
-                                                                                          time:2.0
+                                                                                          time:kTransitionDurationTimeInterval
                                                                                       distance:10
                                                                                          scale:1.1
                                                                                      direction:CGPointMake(-10, 10)];
@@ -42,12 +45,12 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
 - (CIImage *)imageWithTime:(NSTimeInterval)time {
     __block NSTimeInterval currentFilterStartTime = 0;
     __block CIImage *tempImage = nil;
+    
     [self.modelArray enumerateObjectsUsingBlock:^(MXBaseFilterModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (currentFilterStartTime > time) {
-            MXTransitonFilterModel *filter = (MXTransitonFilterModel *)self.modelArray[idx - 1];
+            MXBaseFilterModel *filter = self.modelArray[idx - 1];
             
-            //当前时间坐标 - 上一次循环的startTime / 时间坐标所在滤镜持续时间
-            CGFloat progress = (time - (currentFilterStartTime - obj.duration)) / filter.duration;
+            CGFloat progress = [self filterProgressWithTime:time];
             tempImage = [filter imageWithProgress:progress];
             //停止
             *stop = YES;
@@ -58,8 +61,7 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
             tempImage = nil;
         }
     }];
-    
-    
+
     return tempImage;
 }
 
@@ -75,7 +77,8 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
             NSTimeInterval currentFilterEndTime = [self.timeIntervalArray[idx] floatValue];
             //时间比例
             progress = (time - currentFilterStartTime) / (currentFilterEndTime - currentFilterStartTime);
-            NSAssert(progress < 0 || progress > 1, @"progress invalid");
+//            NSAssert(progress < 0 || progress > 1, @"progress invalid");
+            *stop = YES;
         }
     }];
     return progress;
@@ -102,7 +105,7 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
     
     [images enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         MXTransitonFilterModel *model = [[MXTransitonFilterModel alloc] initWithImageModel:obj
-                                                                                      time:2.0
+                                                                                      time:kTransitionDurationTimeInterval
                                                                                   distance:10
                                                                                      scale:1.1
                                                                                  direction:CGPointMake(-10, 10)];
@@ -124,11 +127,44 @@ static NSTimeInterval const kTransitionDurationTimeInterval = 2.0;
         case MXVideoModelStyleNormal: {
             [images enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 MXTransitonFilterModel *model = [[MXTransitonFilterModel alloc] initWithImageModel:obj
-                                                                                              time:2.0
+                                                                                              time:kTransitionDurationTimeInterval
                                                                                           distance:10
                                                                                              scale:1.1
                                                                                          direction:CGPointMake(-10, 10)];
                 [tempArray addObject:model];
+            }];
+            
+            break;
+        }
+        case MXVideoModelStyleDissolve: {
+            __block UIImage *tempNextImage = nil;
+            [images enumerateObjectsUsingBlock:^(MXImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                //位移模型
+                MXTransitonFilterModel *model = [[MXTransitonFilterModel alloc] initWithImageModel:obj
+                                                                                              time:kTransitionDurationTimeInterval
+                                                                                          distance:10
+                                                                                             scale:1.1
+                                                                                         direction:CGPointMake(-10, 10)];
+                
+                //以位移模型的最后一帧画面为基础 渐变模型
+                CIImage *fromImage = [model imageWithProgress:1];
+                
+                [tempArray addObject:model];
+                //最后一张图片不再渐变
+                if (idx == images.count - 1) {
+                    return;
+                }
+                
+                //从下一个数据模型 获取UIImage
+                MXImageModel *nextModel = images[idx + 1];
+                [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:nextModel.photoAsset WithSize:CGSizeMake(MXScreenWidth, MXScreenHeight) synchronous:YES block:^(UIImage *image, NSDictionary *info) {
+                    tempNextImage = image;
+                }];
+                
+                
+                MXVisualEffectFilterModel *disolveFilterModel = [[MXVisualEffectFilterModel alloc] initWithCIImageFromImage:[model imageWithProgress:1]  ToImage:[[CIImage alloc] initWithImage:tempNextImage] type:MXVisualEffectFilterTypeDissolve duration:kDissolveDurationTimeInterval];
+                
+                [tempArray addObject:disolveFilterModel];
             }];
             
             break;
