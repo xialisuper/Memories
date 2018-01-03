@@ -30,6 +30,14 @@ typedef NS_ENUM(NSUInteger, MXVideoModelStyle) {
 
 - (instancetype)initNormalModelWithImages:(NSArray<MXImageModel *> *)images;
 - (void)loadDataWithImages:(NSArray<MXImageModel *> *)images withBlock:(void(^)(MXVideoModel *model))completion;
+
+/**
+ 通过模型数组获取视频模型
+
+ @param images 图片模型数组
+ @param style 视频动态模式
+ @param completion 返回当前模型
+ */
 - (void)loadDataWithImages:(NSArray<MXImageModel *> *)images style:(MXVideoModelStyle)style completionBlock:(void(^)(MXVideoModel *model))completion;
 
 /**

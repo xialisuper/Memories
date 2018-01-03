@@ -12,8 +12,11 @@
 #import "MXVisualEffectFilterModel.h"
 #import "MXPhotoUtil.h"
 
-static NSTimeInterval const kTransitionDurationTimeInterval = 1.5;
-static NSTimeInterval const kDissolveDurationTimeInterval = 0.2;
+#define MXRandomPoint = [self randomPoint]
+
+static NSTimeInterval const kTransitionDurationTimeInterval = 2;
+static NSTimeInterval const kDissolveDurationTimeInterval = 0.3;
+
 
 @interface MXVideoModel ()
 //总时长
@@ -34,7 +37,7 @@ static NSTimeInterval const kDissolveDurationTimeInterval = 0.2;
                                                                                           time:kTransitionDurationTimeInterval
                                                                                       distance:10
                                                                                          scale:1.1
-                                                                                     direction:CGPointMake(-10, 10)];
+                                                                                     direction:[self randomPoint]];
             [tempArray addObject:model];
         }];
         self.modelArray = tempArray;
@@ -108,7 +111,7 @@ static NSTimeInterval const kDissolveDurationTimeInterval = 0.2;
                                                                                       time:kTransitionDurationTimeInterval
                                                                                   distance:10
                                                                                      scale:1.1
-                                                                                 direction:CGPointMake(-10, 10)];
+                                                                                 direction:[self randomPoint]];
         [tempArray addObject:model];
     }];
     self.modelArray = tempArray;
@@ -130,7 +133,7 @@ static NSTimeInterval const kDissolveDurationTimeInterval = 0.2;
                                                                                               time:kTransitionDurationTimeInterval
                                                                                           distance:10
                                                                                              scale:1.1
-                                                                                         direction:CGPointMake(-10, 10)];
+                                                                                         direction:[self randomPoint]];
                 [tempArray addObject:model];
             }];
             
@@ -144,7 +147,7 @@ static NSTimeInterval const kDissolveDurationTimeInterval = 0.2;
                                                                                               time:kTransitionDurationTimeInterval
                                                                                           distance:10
                                                                                              scale:1.1
-                                                                                         direction:CGPointMake(-10, 10)];
+                                                                                         direction:[self randomPoint]];
                 
                 //以位移模型的最后一帧画面为基础 渐变模型
                 CIImage *fromImage = [model imageWithProgress:1];
@@ -178,6 +181,30 @@ static NSTimeInterval const kDissolveDurationTimeInterval = 0.2;
     self.modelArray = tempArray;
     completion(self);
     
+}
+
+- (CGPoint)randomPoint {
+    int x = arc4random() % 4;
+    CGPoint point;
+    switch (x) {
+        case 0:
+            point = CGPointMake(+5, +5);
+            break;
+        case 1:
+            point = CGPointMake(+5, -5);
+            break;
+        case 2:
+            point = CGPointMake(-5, +5);
+            break;
+        case 3:
+            point = CGPointMake(-5, -5);
+            break;
+        default:
+            point = CGPointMake(+5, +5);
+            break;
+    }
+    NSLog(@"%@", NSStringFromCGPoint(point))
+    return point;
 }
 
 

@@ -90,11 +90,19 @@
             break;
         case UIGestureRecognizerStateBegan: {
 //            [self.navigationController popViewControllerAnimated:YES];
+//            NSLog(@"开始拖拽的frame %@ %@", NSStringFromCGRect(self.imageView.frame), NSStringFromCGRect(self.view.frame));
         }
             break;
         case UIGestureRecognizerStateChanged: {
-            self.imageView.center = CGPointMake(originImageViewCenter.x + translation.x * scale, originImageViewCenter.y + translation.y * scale);
-            self.imageView.transform = CGAffineTransformMakeScale(scale, scale);
+            
+            CGAffineTransform moveTransform = CGAffineTransformTranslate(CGAffineTransformIdentity, translation.x * scale, translation.y * scale);
+            CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale, scale);
+            CGAffineTransform combineTransform = CGAffineTransformConcat(moveTransform, scaleTransform);
+            self.imageView.transform = combineTransform;
+            
+//            self.imageView.center = CGPointMake(originImageViewCenter.x + translation.x * scale, originImageViewCenter.y + translation.y * scale);
+//            self.imageView.transform = CGAffineTransformMakeScale(scale, scale);
+//            NSLog(@"%@", NSStringFromCGAffineTransform(self.imageView.transform));
         }
             break;
         case UIGestureRecognizerStateFailed:
@@ -109,17 +117,28 @@
                     self.imageView.transform = CGAffineTransformIdentity;
                 }];
             } else {    //向下滑动
-//                __block UIImage *tempImage = nil;
-//                [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:self.model.photoAsset WithSize:self.model.cellRect.size synchronous:(BOOL)YES block:^(UIImage *image, NSDictionary *info) {
-//                        tempImage = image;
-//
-//                }];
-                [UIView animateWithDuration:.2f animations:^{
                 
-                    self.imageView.frame = self.model.cellRect;
+#warning 怎么就...不对劲儿呢...GG
+                CGAffineTransform currentTransform = self.imageView.transform;
+//                //计算当前图片的位置
+                CGRect currentRect = CGRectApplyAffineTransform(self.view.frame, currentTransform);
+                NSLog(@"结束拖拽的frame \n%@ \n%@ \n%@", NSStringFromCGRect(self.imageView.frame), NSStringFromCGRect(self.model.cellRect), NSStringFromCGRect(currentRect));
+                CGFloat xScale = self.model.cellRect.size.width / currentRect.size.width;
+                CGFloat yScale = self.model.cellRect.size.height / currentRect.size.height;
+                CGAffineTransform scaleTransform = CGAffineTransformMakeScale(xScale, yScale);
+                
+                [UIView animateWithDuration:.2f animations:^{
+                    
+                    self.imageView.transform = scaleTransform;
+                    
+                    self.imageView.center = CGPointMake(self.model.cellRect.origin.x + 0.5 * self.model.cellRect.size.width, self.model.cellRect.origin.y + 0.5 * self.model.cellRect.size.height);
+
+//                    self.imageView.frame = self.model.cellRect;
 //                    self.imageView.image  = tempImage;
                 } completion:^(BOOL finished) {
-                    
+                    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+
+                    self.imageView.clipsToBounds = YES;
                 }];
             }
         }
@@ -128,6 +147,36 @@
         default:
             break;
     }
+}
+
+
+- (CGRect)convertRect:(CGRect)rect withTransform:(CGAffineTransform)transform {
+    double xMin = rect.origin.x;
+    double xMax = rect.origin.x + rect.size.width;
+    double yMin = rect.origin.y;
+    double yMax = rect.origin.y + rect.size.height;
+    
+    NSArray *points = @[
+                        @(CGPointApplyAffineTransform(CGPointMake(xMin, yMin), transform)),
+                        @(CGPointApplyAffineTransform(CGPointMake(xMin, yMax), transform)),
+                        @(CGPointApplyAffineTransform(CGPointMake(xMax, yMin), transform)),
+                        @(CGPointApplyAffineTransform(CGPointMake(xMax, yMax), transform))
+                        ];
+    
+    double newXMin =  INFINITY;
+    double newXMax = -INFINITY;
+    double newYMin =  INFINITY;
+    double newYMax = -INFINITY;
+    
+    for (int i = 0; i < 4; i++) {
+        newXMax = MAX(newXMax, [points[i] CGPointValue].x);
+        newYMax = MAX(newYMax, [points[i] CGPointValue].y);
+        newXMin = MIN(newXMin, [points[i] CGPointValue].x);
+        newYMin = MIN(newYMin, [points[i] CGPointValue].y);
+    }
+    
+    CGRect result = CGRectMake(newXMin, newYMin, newXMax - newXMin, newYMax - newYMin);
+    return result;
 }
 
 
