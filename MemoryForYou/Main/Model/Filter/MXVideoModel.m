@@ -203,7 +203,7 @@ static NSTimeInterval const kDissolveDurationTimeInterval = 0.3;
             point = CGPointMake(+5, +5);
             break;
     }
-    NSLog(@"%@", NSStringFromCGPoint(point))
+//    NSLog(@"%@", NSStringFromCGPoint(point))
     return point;
 }
 

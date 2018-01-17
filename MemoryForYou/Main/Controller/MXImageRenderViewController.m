@@ -45,9 +45,15 @@ static NSInteger const kFPS = 60;
     
     self.currentTime = 0;
     self.paused = YES;
+    
+    //设置导航控制 播放全屏
+    self.navigationController.hidesBarsOnTap = YES;
 }
 
-
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.hidesBarsOnTap = NO;
+}
 
 - (void)update {
     //0.000000 0.050123 0.000000 0.049994

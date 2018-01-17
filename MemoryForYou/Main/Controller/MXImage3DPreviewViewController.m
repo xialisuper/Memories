@@ -122,9 +122,6 @@
             CGAffineTransform combineTransform = CGAffineTransformConcat(moveTransform, scaleTransform);
             self.fakeImageView.transform = combineTransform;
             
-//            self.imageView.center = CGPointMake(originImageViewCenter.x + translation.x * scale, originImageViewCenter.y + translation.y * scale);
-//            self.imageView.transform = CGAffineTransformMakeScale(scale, scale);
-//            NSLog(@"%@", NSStringFromCGAffineTransform(self.imageView.transform));
         }
             break;
         case UIGestureRecognizerStateFailed:
@@ -144,11 +141,6 @@
                 
                 
                 [UIView animateWithDuration:.2f animations:^{
-                    
-//                    [[MXPhotoUtil sharedInstance] photoUtilFetchThumbnailImageWith:self.model.photoAsset WithSize:self.model.cellRect.size synchronous:(BOOL)YES block:^(UIImage *image, NSDictionary *info) {
-//                        self.imageView.image = image;
-//
-//                    }];
                     
                     self.fakeImageView.frame = self.model.cellRect;
                 } completion:^(BOOL finished) {
