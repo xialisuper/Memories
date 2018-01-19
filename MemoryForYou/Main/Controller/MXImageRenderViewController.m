@@ -52,6 +52,7 @@ static NSInteger const kFPS = 60;
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    //导航栏设置回默认 不影响其他控制器.
     self.navigationController.hidesBarsOnTap = NO;
 }
 
