@@ -479,7 +479,9 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TencentOpenApi_IOS_Bundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -677,7 +679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JNWXFM5T8S;
+				DEVELOPMENT_TEAM = TW4V35KEW8;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MemoryForYou/Supporting Files/MXPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/MemoryForYou/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -694,7 +696,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JNWXFM5T8S;
+				DEVELOPMENT_TEAM = TW4V35KEW8;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MemoryForYou/Supporting Files/MXPrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/MemoryForYou/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
